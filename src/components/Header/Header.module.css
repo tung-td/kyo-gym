@@ -1,0 +1,32 @@
+.kyoRoundLogo1 {
+    width: 100px;
+    height: 100px;
+}
+
+.homepage {
+    position: relative;
+    background-color: var(--color-yellow-white) !important;
+    width: 100%;
+    text-align: left;
+    font-size: var(--font-size-5xl);
+    color: var(--color-gray-400);
+    font-family: var(--font-agency-fb);
+}
+
+.navigation {
+    padding: 0 230px !important;
+    margin: unset;
+    min-width: 100%;
+    background-color: var(--color-yellow-white);
+}
+
+.navList {
+    position: absolute;
+    right: 230px;
+    color: #2B2024;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

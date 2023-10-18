@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One:wght@400&display=swap");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-agency-fb: "Agency FB";
+  --font-roboto: Roboto;
+  --font-alfa-slab-one: "Alfa Slab One";
+  --font-outfit: Outfit;
+  --font-lexend: Lexend;
+  --font-poppins: Poppins;
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+  --font-size-xl: 20px;
+  --font-size-3xl: 22px;
+  --font-size-13xl: 32px;
+  --font-size-41xl: 60px;
+  --font-size-lg: 18px;
+  --font-size-21xl: 40px;
+  --font-size-29xl: 48px;
+  --font-size-mini: 15px;
+  --font-size-smi: 13px;
+  --font-size-6xl: 25px;
+  --font-size-base: 16px;
+  --font-size-11xl: 30px;
+
+  /* Colors */
+  --color-yellow-white: #F1ECE8;
+  --color-linen: #f1ece8;
+  --color-gray-100: #fafafa;
+  --color-gray-200: #909090;
+  --color-gray-300: #827a7a;
+  --color-gray-400: #2b2024;
+  --c: #12163c;
+  --color-gray-500: #0c0531;
+  --color-gray-600: rgba(43, 32, 36, 0.5);
+  --color-firebrick-100: #cf4044;
+  --color-firebrick-200: rgba(207, 64, 68, 0.85);
+  --color-white: #fff;
+  --cold-grey-40: #9a9ea5;
+  --color-gainsboro: #e2e2e2;
+  --color-dimgray-100: #6a6b6c;
+  --color-dimgray-200: #4b2f2f;
+  --color-darkslategray: #37383c;
+  --color-red-body: #d35255;
+  --color-black: #000;
+
+  /* Gaps */
+  --gap-21xl: 40px;
+
+  /* Paddings */
+  --padding-4xs: 9px;
+  --padding-11xs: 2px;
+  --padding-8xs: 5px;
+  --padding-7xl: 26px;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+  --br-5xs: 8px;
+  --br-8xs: 5px;
+}
+
+/* Ẩn thanh cuộn dọc */
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body {
+  display: block !important;
+  max-width: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,102 @@
+.container {
+    width: 100%;
+    flex-shrink: 0;
+    background-color: var(--color-yellow-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.title {
+    color: #2B2024;
+    text-align: center;
+    font-family: Agency FB;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    max-width: 482px;
+    margin-top: 115px;
+    margin-bottom: 50px;
+}
+
+.body {
+    display: flex;
+}
+
+.body_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.body_title {
+    color: #2B2024;
+    font-family: Outfit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    max-width: 500px;
+}
+
+.body_des {
+    color: #909090;
+    font-family: Outfit;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.44px;
+    max-width: 500px;
+}
+
+.body_btn {
+    border-radius: 15px;
+    border: none;
+    background: #F1ECE8;
+    color: #909090;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 15px;
+    background-color: var(--color-red-body);
+    color: #F1ECE8;
+}
+
+.body_btn:hover {
+    opacity: 0.8;
+}
+
+.body_center {
+    margin: 0 70px;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.body_right_item {
+    display: flex;
+    align-items: center;
+}
+
+.body_right_item>img {
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.body_right_item>p {
+    color: #2B2024;
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

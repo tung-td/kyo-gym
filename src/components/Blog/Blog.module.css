@@ -1,0 +1,137 @@
+.container {
+    width: 100%;
+    flex-shrink: 0;
+    background-color: var(--color-yellow-white);
+    padding: 0px 309px;
+    position: relative;
+    height: 800px;
+}
+
+.title_top {
+    color: #CF4044;
+    font-family: Agency FB;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.92px;
+    margin-bottom: 46px;
+}
+
+.blog_btn_more {
+    width: 191px;
+    height: 58px;
+    border: 2px solid #CF4044;
+    color: #CF4044;
+    text-align: center;
+    font-family: Agency FB;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    position: absolute;
+    right: 309px;
+    top: 38px;
+}
+
+.title_body {
+    color: #2B2024;
+    font-family: Agency FB;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.grid_container {
+    display: flex;
+}
+
+.card {
+    width: 414px;
+    height: 294px;
+}
+
+.card_left {
+    margin-right: 22.5px;
+}
+
+.card_right {
+    margin-left: 22.5px;
+}
+
+.card_center {
+    margin: 0 22.5px;
+}
+
+.card_img {
+    width: 414px;
+    height: 281px;
+}
+
+.card_body {
+    width: 414px;
+    height: 294px;
+    border: 1px solid #E2E2E2;
+    background: #FFF;
+    padding: 38px;
+}
+
+.card_title {
+    color: #2B2024;
+    font-family: Agency FB;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.92px;
+}
+
+.card_des {
+    color: #909090;
+    font-family: Agency FB;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.44px;
+}
+
+.card_date {
+    color: #909090;
+    font-family: Agency FB;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.2px;
+}
+
+.card_footer {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_more_info_btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #CF4044;
+    margin: 0 15px;
+    font-size: 30px;
+    color: #CF4044;
+    text-align: center;
+    font-family: Agency FB;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+}
+
+.card_more_info_btn:active {
+    color: #e9e8e9;
+}
