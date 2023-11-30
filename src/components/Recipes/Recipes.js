@@ -13,7 +13,7 @@ const Recipes = () => {
             <p className={styles.title}>RECIPES</p>
             <div className={styles.body}>
                 <div className={styles.body_left}>
-                    <img src={food_re} ></img>
+                    <img alt="food" src={food_re} ></img>
                 </div>
                 <div className={styles.body_center}>
                     <p className={styles.body_title}>Protein-packed power bowl</p>
@@ -25,19 +25,19 @@ const Recipes = () => {
                 </div>
                 <div className={styles.body_right}>
                     <div className={styles.body_right_item}>
-                        <img src={food_re1}></img>
+                        <img alt="food" src={food_re1}></img>
                         <p>High Protein Recipes</p>
                     </div>
                     <div className={styles.body_right_item}>
-                        <img src={food_re2}></img>
+                        <img alt="food" src={food_re2}></img>
                         <p>High Protein Recipes</p>
                     </div>
                     <div className={styles.body_right_item}>
-                        <img src={food_re3}></img>
+                        <img alt="food" src={food_re3}></img>
                         <p>High Protein Recipes</p>
                     </div>
                     <div className={styles.body_right_item}>
-                        <img src={food_re4}></img>
+                        <img alt="food" src={food_re4}></img>
                         <p>High Protein Recipes</p>
                     </div>
                 </div>

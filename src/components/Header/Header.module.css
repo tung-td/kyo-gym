@@ -1,32 +1,51 @@
 .kyoRoundLogo1 {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 160px;
 }
 
-.homepage {
-    position: relative;
-    background-color: var(--color-yellow-white) !important;
-    width: 100%;
-    text-align: left;
-    font-size: var(--font-size-5xl);
-    color: var(--color-gray-400);
-    font-family: var(--font-agency-fb);
+.appBar {
+    background-color: #37383c !important;
+    box-shadow: unset;
 }
 
-.navigation {
-    padding: 0 230px !important;
-    margin: unset;
-    min-width: 100%;
-    background-color: var(--color-yellow-white);
+.container {
+    background-color: #37383c !important;
+    border-radius: 11px;
+    margin-top: 20px;
+    padding-left: 10px !important;
+    padding-right: 57px !important;
 }
 
-.navList {
+.menuItem {
+    margin-left: 40px;
+}
+
+.menuItem:hover {}
+
+.menuItemText {
+    font-size: 17px !important;
+    color: #fff !important;
+    margin: 0 8px !important;
+    line-height: 0.1 !important;
+}
+
+.SearchIconWrapper {
+    padding: 0px 12px;
+    height: 100%;
     position: absolute;
-    right: 230px;
-    color: #2B2024;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Search {
+    position: relative;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-right: 8px;
+    margin-left: 0;
+}
+
+.Search:hover {
+    background-color: rgba(255, 255, 255, 0.25);
 }

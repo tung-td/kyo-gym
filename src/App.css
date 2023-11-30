@@ -70,6 +70,18 @@ body {
   --br-8xs: 5px;
 }
 
+.Courses_education__g11M5 {
+  background-color: #e9525073;
+}
+
+.Courses_overlay__ysaQg {
+  background-color: #e9525073;
+}
+
+.Courses_card__o3scF:hover .Courses_circle__DfQWI:after {
+  background-color: #ce6f6d73;
+}
+
 /* Ẩn thanh cuộn dọc */
 ::-webkit-scrollbar {
   display: none;
@@ -79,8 +91,16 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  background-color: var(--color-yellow-white);
+}
+
 body {
   display: block !important;
   max-width: 100%;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: unset !important;
 }

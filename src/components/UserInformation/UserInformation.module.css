@@ -1,0 +1,137 @@
+.container {
+    padding: 30px 136px;
+    background-color: var(--color-yellow-white);
+}
+
+.grid_container {
+    padding: unset !important;
+}
+
+.grid_row {
+    display: flex !important;
+}
+
+.banner {
+    position: relative;
+}
+
+.under_banner {
+    display: flex;
+    height: 111px;
+    width: 100%;
+}
+
+.img_ava {
+    left: 31px;
+    bottom: 33px;
+    position: absolute;
+    width: 155.513px !important;
+    height: 185px;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background-color: lightgray 50% / cover no-repeat, #FFD599;
+}
+
+.customer_name {
+    margin-left: 204px !important;
+    font-size: 24px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 32px !important;
+}
+
+.information {
+    display: flex;
+    padding-bottom: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    border-radius: 8px;
+    background: #FFF;
+}
+
+.info_title {
+    display: flex;
+    width: 372px;
+    padding: 0px 12px 12px 24px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px -1px 0px 0px #E5E7E8 inset;
+    margin: 32px 0px !important;
+}
+
+.info_title_icon {
+    font-size: 22px;
+    color: var(--color-red-body);
+    margin: 3px 14px 14px 14px;
+}
+
+.info_title_item {
+    color: var(--gray-900, #191B1C);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.info_title_tag {
+    color: var(--gray-400, #959FA3);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+.card_tracking {
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 16px 31px 0px rgba(0, 0, 0, 0.01);
+}
+
+.card_tracking_title {
+    color: #6c757d;
+    font-size: 18px !important;
+    font-style: normal;
+    font-weight: 600 !important;
+}
+
+.card_tracking_data_icon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card_tracking_data {
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.card_tracking_icon {
+    width: 50px;
+    height: 40px;
+    color: var(--color-red-body)
+}
+
+.card_tracking_icon_bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88.292px;
+    height: 88.292px;
+    border-radius: 8px;
+    background: rgba(207, 64, 68, 0.10);
+    color: var(--color-red-body)
+}
+
+.chart {
+    background-color: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}

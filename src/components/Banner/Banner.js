@@ -1,13 +1,22 @@
 import React from 'react';
 import styles from './Banner.module.css';
-
+import { useAuth } from '../../AuthContext'
 import runner from '../../images/runner.png'
 import eclipse from '../../images/Ellipse_Banner.png'
 import star from '../../images/Star.png'
 import cal from '../../images/circle_cal.png'
 import react from '../../images/react.png'
 
+import ChartCircle from '../ChartCircle/ChartCircle';
+
 const Banner = () => {
+
+    const { user } = useAuth();
+    var isLogin = false;
+    if (user) {
+        isLogin = true;
+    }
+
     return (
         <div className={styles.banner_container}>
             <div className={styles.bn_left}>
@@ -23,23 +32,27 @@ const Banner = () => {
                 <button className={styles.bn_left_btn}>start now</button>
             </div>
             <div className={styles.bn_center}>
-                <img src={runner} alt="Runner" className={styles.runner}></img>
-                <img src={eclipse} alt='Eclipse' className={styles.eclipse}></img>
+                <img alt="img" src={runner} className={styles.runner}></img>
+                <img alt="img" src={eclipse} className={styles.eclipse}></img>
             </div>
             <div className={styles.bn_right}>
                 <div className={styles.rating}>
                     <div className={styles.rt}>
-                        <img src={star} className={styles.star}></img>
+                        <img alt="img" src={star} className={styles.star}></img>
                         <p className={styles.number_rating}>4.8</p>
                     </div>
                     <p className={styles.rating_title}>Average customer rating</p>
                 </div>
                 <div className={styles.circle}>
-                    <img src={cal}></img>
-                    <p className={styles.cal}>200 CAL</p>
+                    {isLogin ? (<ChartCircle />) :
+                        (
+                            <div><img alt="img" src={cal}></img>
+                                <p className={styles.cal}>200 CAL</p></div>
+                        )
+                    }
                 </div>
                 <div>
-                    <img src={react}></img>
+                    <img alt="img" src={react}></img>
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Courses.module.css';
-
 import want_banner from '../../images/want_banner.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -19,7 +18,7 @@ const Courses = () => {
             </p>
             <p className={styles.title_body}>What programs we are give</p>
             <div className={styles.slider}>
-                <a href="#" className={`${styles.card} ${styles.education}`}>
+                <a href="/collections" className={`${styles.card} ${styles.education}`}>
                     <div className={styles.overlay}></div>
                     <div className={styles.circle}>
                         <svg width="64px" height="72px" viewBox="27 21 64 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
@@ -49,10 +48,10 @@ const Courses = () => {
                             </g>
                         </svg>
                     </div>
-                    <p>Education</p>
+                    <p>Strength Training</p>
                 </a>
 
-                <a href="#" className={`${styles.card} ${styles.education}`}>
+                <a href="/collections" className={`${styles.card} ${styles.education}`}>
                     <div className={styles.overlay}></div>
                     <div className={styles.circle}>
                         <svg width="64px" height="72px" viewBox="27 21 64 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
@@ -82,10 +81,10 @@ const Courses = () => {
                             </g>
                         </svg>
                     </div>
-                    <p>Education</p>
+                    <p>Cardiovascular</p>
                 </a>
 
-                <a href="#" className={`${styles.card} ${styles.education}`}>
+                <a href="/collections" className={`${styles.card} ${styles.education}`}>
                     <div className={styles.overlay}></div>
                     <div className={styles.circle}>
                         <svg width="64px" height="72px" viewBox="27 21 64 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
@@ -115,10 +114,10 @@ const Courses = () => {
                             </g>
                         </svg>
                     </div>
-                    <p>Education</p>
+                    <p>Flexibility</p>
                 </a>
 
-                <a href="#" className={`${styles.card} ${styles.education}`}>
+                <a href="/collections" className={`${styles.card} ${styles.education}`}>
                     <div className={styles.overlay}></div>
                     <div className={styles.circle}>
                         <svg width="64px" height="72px" viewBox="27 21 64 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
@@ -148,7 +147,7 @@ const Courses = () => {
                             </g>
                         </svg>
                     </div>
-                    <p>Education</p>
+                    <p>Mind-Body Wellness</p>
                 </a>
             </div>
 

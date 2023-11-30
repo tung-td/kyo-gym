@@ -1,0 +1,137 @@
+.myContainer {
+    display: flex;
+    padding: 7rem 17rem;
+}
+
+.myCol {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.myTitle {
+    margin: 4rem 0;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.text_red {
+    color: var(--color-red-body);
+}
+
+.mySubtitle {
+    color: hsl(217, 10%, 50.8%);
+    padding: 0 3rem;
+}
+
+.myCard {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 5rem 0;
+    overflow: hidden;
+    width: 90%;
+}
+
+.myCardBody {
+    padding: 2rem;
+}
+
+.myInputWrapper {
+    margin-bottom: 1.5rem;
+}
+
+.myInputWrapper label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.myInputWrapper input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease;
+}
+
+.myInputWrapper input:focus {
+    outline: none;
+    border-color: var(--color-red-body);
+}
+
+.myInputWrapper input::placeholder {
+    color: #aaa;
+}
+
+.myCheckbox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.myButton_login {
+    background-color: var(--color-red-body);
+    border: 1px solid var(--color-red-body);
+    color: #fff;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    transition: var(--color-red-body) 0.3s ease;
+    width: 100%;
+}
+
+.myButton_register:hover,
+.myButton_login:hover {
+    opacity: 0.7;
+}
+
+.myButton_register:active,
+.myButton_login:active {
+    opacity: 1;
+    color: #ffffff;
+}
+
+.myButton_register {
+    background-color: var(--color-red-body);
+    border: 1px solid var(--color-red-body);
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: var(--color-red-body) 0.3s ease;
+    margin: 0 10px;
+}
+
+.myButton:hover {
+    background-color: #0056b3;
+}
+
+.mySocialButtons {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.mySocialButton {
+    background-color: var(--color-red-body);
+    border: 1px solid var(--color-red-body);
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.mySocialButton:hover {
+    background-color: #0056b3;
+}
+
+.link {
+    cursor: pointer;
+}

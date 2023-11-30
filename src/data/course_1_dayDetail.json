@@ -1,0 +1,204 @@
+{
+    "dayId": 1,
+    "title": "Day 1",
+    "videoUrl": "https://example.com/videos/beginner/day1.mp4",
+    "exercises": [
+        {
+            "exerciseId": 1,
+            "bodyPart": "lower legs",
+            "equipment": "body weight",
+            "gifUrl": "https://v2.exercisedb.io/image/zNtoIKqgZKIdu-",
+            "target": "calves",
+            "description": "Brisk walking exercise for cardio and overall body activation.",
+            "duration": "10 minutes",
+            "comments": [
+                {
+                    "id": 1,
+                    "avatar": "N",
+                    "name": "John Doe",
+                    "rating": 4,
+                    "text": "This is a good comment with some additional text. It provides valuable feedback on the topic."
+                },
+                {
+                    "id": 2,
+                    "avatar": "A",
+                    "name": "Jane Smith",
+                    "rating": 5,
+                    "text": "I absolutely loved this! Best ever. It exceeded my expectations."
+                },
+                {
+                    "id": 3,
+                    "avatar": "B",
+                    "name": "Mike Dude",
+                    "rating": 5,
+                    "text": "Another fantastic comment from a happy user. The quality of this content is outstanding."
+                },
+                {
+                    "id": 4,
+                    "avatar": "R",
+                    "name": "Alice Johnson",
+                    "rating": 4,
+                    "text": "Nice work, keep it up! Your efforts are truly appreciated."
+                },
+                {
+                    "id": 5,
+                    "avatar": "T",
+                    "name": "Emily Adams",
+                    "rating": 5,
+                    "text": "Outstanding. I love it! This is exactly what I was looking for. Kudos to the creator."
+                },
+                {
+                    "id": 6,
+                    "avatar": "H",
+                    "name": "David Brown",
+                    "rating": 3,
+                    "text": "Not bad, could use some improvements. While it's decent, there's room for growth."
+                }
+            ],
+            "instructions": [
+                "Sit on the ground with your legs extended in front of you.",
+                "Lift one leg off the ground and rotate your ankle in a circular motion.",
+                "Perform the desired number of circles in one direction, then switch to the other direction.",
+                "Repeat with the other leg."
+            ]
+        },
+        {
+            "exerciseId": 2,
+            "name": "assisted lying calves stretch",
+            "description": "Squat exercise utilizing your body weight to strengthen lower body muscles.",
+            "duration": "5 minutes",
+            "bodyPart": "lower legs",
+            "equipment": "assisted",
+            "gifUrl": "https://v2.exercisedb.io/image/7tu-3Kp6TM4Bt5",
+            "target": "calves",
+            "comments": [
+                {
+                    "id": 1,
+                    "avatar": "N",
+                    "name": "John Doe",
+                    "rating": 4,
+                    "text": "This is a good comment with some additional text. It provides valuable feedback on the topic."
+                },
+                {
+                    "id": 2,
+                    "avatar": "A",
+                    "name": "Jane Smith",
+                    "rating": 5,
+                    "text": "I absolutely loved this! Best ever. It exceeded my expectations."
+                },
+                {
+                    "id": 3,
+                    "avatar": "B",
+                    "name": "Mike Dude",
+                    "rating": 5,
+                    "text": "Another fantastic comment from a happy user. The quality of this content is outstanding."
+                },
+                {
+                    "id": 4,
+                    "avatar": "R",
+                    "name": "Alice Johnson",
+                    "rating": 4,
+                    "text": "Nice work, keep it up! Your efforts are truly appreciated."
+                },
+                {
+                    "id": 5,
+                    "avatar": "T",
+                    "name": "Emily Adams",
+                    "rating": 5,
+                    "text": "Outstanding. I love it! This is exactly what I was looking for. Kudos to the creator."
+                },
+                {
+                    "id": 6,
+                    "avatar": "H",
+                    "name": "David Brown",
+                    "rating": 3,
+                    "text": "Not bad, could use some improvements. While it's decent, there's room for growth."
+                }
+            ],
+            "instructions": [
+                "Lie on your back with your legs extended.",
+                "Bend one knee and place your foot flat on the ground.",
+                "Using your hands or a towel, gently pull your toes towards your body, feeling a stretch in your calf.",
+                "Hold the stretch for 20-30 seconds.",
+                "Release the stretch and repeat on the other leg."
+            ]
+        }
+    ],
+    "nutrition": [
+        {
+            "meal": "Breakfast",
+            "foods": [
+                {
+                    "recipe": {
+                        "name": "Oatmeal",
+                        "calories": 150,
+                        "protein": 5,
+                        "fat": 3,
+                        "carbohydrates": 25
+                    },
+                    "serving": 1
+                },
+                {
+                    "recipe": {
+                        "name": "Scrambled Eggs",
+                        "calories": 200,
+                        "protein": 12,
+                        "fat": 15,
+                        "carbohydrates": 2
+                    },
+                    "serving": 2
+                }
+            ]
+        },
+        {
+            "meal": "Lunch",
+            "foods": [
+                {
+                    "recipe": {
+                        "name": "Grilled Chicken Breast",
+                        "calories": 250,
+                        "protein": 30,
+                        "fat": 3,
+                        "carbohydrates": 0
+                    },
+                    "serving": 1
+                },
+                {
+                    "recipe": {
+                        "name": "Brown Rice",
+                        "calories": 150,
+                        "protein": 3,
+                        "fat": 1,
+                        "carbohydrates": 30
+                    },
+                    "serving": 1
+                }
+            ]
+        },
+        {
+            "meal": "Dinner",
+            "foods": [
+                {
+                    "recipe": {
+                        "name": "Salmon",
+                        "calories": 300,
+                        "protein": 20,
+                        "fat": 25,
+                        "carbohydrates": 0
+                    },
+                    "serving": 1
+                },
+                {
+                    "recipe": {
+                        "name": "Steamed Vegetables",
+                        "calories": 50,
+                        "protein": 2,
+                        "fat": 0,
+                        "carbohydrates": 10
+                    },
+                    "serving": 1
+                }
+            ]
+        }
+    ]
+}

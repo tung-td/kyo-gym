@@ -9,21 +9,33 @@ import avt from "../../images/review_avt.png"
 const reviews = [
     {
         id: 1,
-        text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit",
+        text: "Great gym with excellent facilities! The trainers are knowledgeable and friendly. I've seen amazing results since joining.",
         author: "John Doe",
         rating: 5,
     },
     {
         id: 2,
-        text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit",
+        text: "The atmosphere at this gym is fantastic. It's clean, well-maintained, and the classes are enjoyable. Highly recommend!",
         author: "Jane Smith",
         rating: 4.5,
     },
     {
-        id: 5,
-        text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit",
+        id: 3,
+        text: "Disappointing experience. The equipment is outdated, and the staff is not very helpful. I expected more for the price.",
         author: "Bob Wilson",
-        rating: 1.5,
+        rating: 2,
+    },
+    {
+        id: 4,
+        text: "Incredible gym! The trainers are dedicated, and the variety of classes keeps things interesting. Definitely worth the membership fee.",
+        author: "Alice Johnson",
+        rating: 4.8,
+    },
+    {
+        id: 5,
+        text: "I love the flexibility of their class schedule. It allows me to work out at times that suit my busy lifestyle. Thumbs up!",
+        author: "Chris Thompson",
+        rating: 4,
     },
 ];
 
@@ -68,7 +80,7 @@ const Review = () => {
                 </div>
                 <div className={styles.slider_review}>
                     <div className={styles.avt_name_star}>
-                        <img src={avt} className={styles.slider_avt}></img>
+                        <img src={avt} alt="avt" className={styles.slider_avt}></img>
                         <div className={styles.name_star}>
                             <div className={styles.name}>{currentReview.author}</div>
                             <div className="rating-stars">{renderRatingStars(currentReview.rating)}</div>

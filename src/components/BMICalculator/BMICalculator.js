@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './BMICalculator.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const BMI = () => {
+    const [weight, setWeight] = useState('')
+    const [height, setHeight] = useState('')
+    const [bmi, setBmi] = useState('')
+
+    const calculateBMI = () => {
+        const weightInKg = parseFloat(weight);
+        const heightInM = parseFloat(height) / 100;
+
+        if (isNaN(weightInKg) || isNaN(heightInM) || weightInKg <= 0 || heightInM <= 0) {
+            setBmi('Not valid');
+            return;
+        }
+
+        const bmiResult = weightInKg / (heightInM * heightInM);
+
+        const roundedBMI = bmiResult.toFixed(2);
+        setBmi(roundedBMI)
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.box}>
@@ -15,11 +34,11 @@ const BMI = () => {
                     </svg>
                 </p>
                 <div>
-                    <input placeholder='FIT' className={styles.input_box}></input>
-                    <input placeholder='IN' className={styles.input_box}></input>
-                    <input placeholder='LESS' className={styles.input_box}></input>
+                    <input placeholder='Weight (kg)' className={styles.input_box} value={weight} onChange={(e) => setWeight(e.target.value)}></input>
+                    <input placeholder='Height (cm)' className={styles.input_box} value={height} onChange={(e) => setHeight(e.target.value)}></input>
+                    <input placeholder='BMI' className={styles.input_box} value={bmi}></input>
                 </div>
-                <button className={styles.btn_cal}>
+                <button className={styles.btn_cal} onClick={calculateBMI}>
                     CALCULATE
                     <FontAwesomeIcon icon={faMagnifyingGlass} style={{ marginLeft: '10px', fontSize: '22px' }} />
                 </button>

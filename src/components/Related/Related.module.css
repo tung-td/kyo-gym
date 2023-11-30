@@ -1,0 +1,16 @@
+.container {
+    background-color: var(--color-yellow-white);
+    display: flex;
+    padding: 20px 140px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

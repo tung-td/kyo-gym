@@ -55,6 +55,11 @@ body {
     --box-shadow-color: rgba(255, 215, 97, 0.48);
 }
 
+.education>p {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 .credentialing {
     --bg-color: #B8F9D3;
     --bg-color-light: #e2fced;

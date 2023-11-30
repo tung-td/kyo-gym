@@ -1,0 +1,6 @@
+.container {
+    background-color: var(--color-yellow-white);
+    display: flex;
+    padding: 20px 132px;
+    justify-content: space-between;
+}

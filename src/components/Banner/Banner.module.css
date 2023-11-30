@@ -1,10 +1,12 @@
 .banner_container {
     padding: 37px 202px !important;
     display: flex;
+    justify-content: space-between;
     background-color: var(--color-yellow-white);
 }
 
 .bn_left {
+    position: absolute;
     margin-top: 126px;
     max-width: 552px;
 }
@@ -66,7 +68,7 @@
 
 .bn_center {
     position: relative;
-    margin-right: 42px;
+    margin-left: 450px;
 }
 
 .runner {

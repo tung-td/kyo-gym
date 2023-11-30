@@ -44,7 +44,7 @@ const Blog = () => {
             <button className={styles.blog_btn_more}>MORE ARTICLES</button>
             <p className={styles.title_body}>OUR RECENT ARTICLES</p>
             <div className={styles.grid_container}>
-                {cardData.map((card, index) => (
+                {cardData?.map((card, index) => (
                     <div className={`${styles.card}
                                     ${index === 0 ? styles.card_left : index === cardData.length - 1 ? styles.card_right : styles.card_center}`
                     }

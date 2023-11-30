@@ -1,0 +1,296 @@
+{
+    "id": 1,
+    "title": "Beginner's Fitness Essentials",
+    "description": "A comprehensive course for newcomers, concentrating on fundamental fitness practices and workout routines.",
+    "duration": "4 weeks",
+    "days": [
+        {
+            "dayId": 1,
+            "title": "Day 1",
+            "videoUrl": "https://example.com/videos/beginner/day1.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 1,
+                    "title": "Walking",
+                    "description": "Brisk walking exercise for cardio and overall body activation.",
+                    "duration": "10 minutes"
+                },
+                {
+                    "exerciseId": 2,
+                    "title": "Bodyweight Squats",
+                    "description": "Squat exercise utilizing your body weight to strengthen lower body muscles.",
+                    "duration": "5 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Start your day with oatmeal and fresh fruits.",
+                "lunch": "Lunch should include lean proteins and salad.",
+                "dinner": "Opt for a light dinner with vegetables and a protein source."
+            }
+        },
+        {
+            "dayId": 2,
+            "title": "Day 2",
+            "videoUrl": "https://example.com/videos/beginner/day2.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 3,
+                    "title": "Jumping Jacks",
+                    "description": "Cardio exercise for a full-body workout.",
+                    "duration": "8 minutes"
+                },
+                {
+                    "exerciseId": 4,
+                    "title": "Push-ups",
+                    "description": "Strengthens upper body muscles.",
+                    "duration": "7 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Fruits and yogurt make a great morning combo.",
+                "lunch": "Grilled chicken and vegetables for a fulfilling lunch.",
+                "dinner": "Healthy dinner with fish and greens."
+            }
+        },
+        {
+            "dayId": 3,
+            "title": "Day 3",
+            "videoUrl": "https://example.com/videos/beginner/day3.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 5,
+                    "title": "Running",
+                    "description": "Outdoor or treadmill running for endurance.",
+                    "duration": "15 minutes"
+                },
+                {
+                    "exerciseId": 6,
+                    "title": "Plank",
+                    "description": "Core-strengthening exercise.",
+                    "duration": "5 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Eggs and toast for a good start to the day.",
+                "lunch": "Protein-rich lunch with beans and veggies.",
+                "dinner": "Light dinner with soup and salad."
+            }
+        },
+        {
+            "dayId": 4,
+            "title": "Day 4",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        },
+        {
+            "dayId": 5,
+            "title": "Day 5",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        },
+        {
+            "dayId": 6,
+            "title": "Day 6",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        },
+        {
+            "dayId": 7,
+            "title": "Day 7",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        },
+        {
+            "dayId": 8,
+            "title": "Day 8",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        },
+        {
+            "dayId": 9,
+            "title": "Day 9",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        },
+        {
+            "dayId": 10,
+            "title": "Day 10",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        },
+        {
+            "dayId": 11,
+            "title": "Day 11",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        },
+        {
+            "dayId": 12,
+            "title": "Day 12",
+            "videoUrl": "https://example.com/videos/beginner/day4.mp4",
+            "exercises": [
+                {
+                    "exerciseId": 7,
+                    "title": "Cycling",
+                    "description": "Cardiovascular workout on a stationary bike or outdoors.",
+                    "duration": "20 minutes"
+                },
+                {
+                    "exerciseId": 8,
+                    "title": "Leg Raises",
+                    "description": "Strengthens abdominal muscles.",
+                    "duration": "6 minutes"
+                }
+            ],
+            "nutrition": {
+                "breakfast": "Healthy smoothie with fruits and nuts.",
+                "lunch": "Quinoa salad with greens and nuts.",
+                "dinner": "Protein-rich dinner with tofu and vegetables."
+            }
+        }
+    ]
+}

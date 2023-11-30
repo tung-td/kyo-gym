@@ -1,0 +1,80 @@
+.container {
+    background-color: var(--color-yellow-white);
+}
+
+.video>video {
+    border-radius: 10px 10px 0px 0px;
+    width: 1236px !important;
+    height: auto !important;
+}
+
+.info_video {
+    padding: 33px;
+    background-color: #fff;
+    width: 1236px;
+}
+
+.video_title {
+    color: #1F2029;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: Poppins;
+}
+
+.video_description {
+    background: #fafafb;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.video_author {
+    color: #696974;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    font-family: Poppins;
+    line-height: normal;
+}
+
+.tab_buttons {
+    width: 1237px;
+    padding: 34px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #FFF;
+    padding-top: unset;
+}
+
+.tab_buttons>button {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+
+.tab_buttons>button:focus {}
+
+.tab_active {
+    color: #000;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: unset;
+    border-bottom: 2px solid #000;
+}
+
+.tab_inactive {
+    color: #92929C;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: unset;
+}

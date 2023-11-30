@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Beginner's Fitness Essentials",
+        "description": "A comprehensive course for newcomers, concentrating on fundamental fitness practices and workout routines.",
+        "duration": "4 weeks"
+    },
+    {
+        "id": 2,
+        "title": "Elevate Your Workout",
+        "description": "An intermediate level course introducing advanced workout techniques to level up your fitness journey.",
+        "duration": "8 weeks"
+    },
+    {
+        "id": 3,
+        "title": "Mastering Fitness & Strength",
+        "description": "An advanced course for those seeking to push their limits in strength and fitness training.",
+        "duration": "12 weeks"
+    },
+    {
+        "id": 4,
+        "title": "Mastering Fitness & Elevate Your Workout",
+        "description": "An advanced course for those seeking to push their limits in strength and fitness training.",
+        "duration": "3 weeks"
+    }
+]
