@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./VideoPlayer.module.css"
-import { useState } from "react";
 import Recipe from "../Recipe/Recipe";
 import Comments from "../Comments/Comments";
 import Instructions from "../Instructions/Instructions";
 import ReactPlayer from 'react-player'
+import { request } from '../../utils/axiosInstance';
+import { useAuth } from '../../AuthContext'
 
-const VideoPlayer = ({ exersise, onCommentSubmit, meals }) => {
+const VideoPlayer = ({ exercise, onCommentSubmit, meals }) => {
 
     const [currentTab, setCurrentTab] = useState("instructions");
 
@@ -14,22 +15,40 @@ const VideoPlayer = ({ exersise, onCommentSubmit, meals }) => {
         setCurrentTab(tab);
     };
 
+    const { user } = useAuth();
+    const [userData, setUserData] = useState([]);
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const res = await request.get('/customer/detail')
+                setUserData(res)
+            } catch (error) {
+                console.log("Error fetching user information", error);
+            }
+        }
+
+        if (user) {
+            fetchUserData();
+        }
+    }, [user])
+
     return (
         <div className={styles.container}>
-            {exersise && exersise.videoUrl && (
+            {exercise && exercise.videoUrl && (
                 <ReactPlayer
                     width="1236px"
                     height="auto"
                     className={styles.video}
-                    url={exersise.videoUrl}
+                    url={exercise.videoUrl}
                     playing={true}
                     controls={true}
                     loop={true}
                 />
             )}
             <div className={styles.info_video}>
-                <h1 className={styles.video_title}>{exersise.exerciseName}</h1>
-                <p className={styles.video_description}>{exersise.instructions}</p>
+                <h1 className={styles.video_title}>{exercise.exerciseName}</h1>
+                <p className={styles.video_description}>{exercise.instructions}</p>
             </div>
 
             <div className={styles.tab_buttons}>
@@ -54,11 +73,11 @@ const VideoPlayer = ({ exersise, onCommentSubmit, meals }) => {
 
                 <div>
                     {currentTab === "instructions" && (
-                        <Instructions exersise={exersise} />
+                        <Instructions exercise={exercise} />
                     )}
 
                     {currentTab === "comments" && (
-                        <Comments exersise={exersise} onCommentSubmit={onCommentSubmit} />
+                        <Comments exercise={exercise} userData={userData} />
                     )}
 
                     {currentTab === "recipe" && (

@@ -3,13 +3,16 @@
     display: flex;
     padding: 10px 120px;
     position: relative;
+    overflow-y: hidden !important;
+    height: auto !important;
+
 }
 
 .cardContainer {
     display: flex;
     width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
 .go_corner {
@@ -51,7 +54,8 @@
 .card1 {
     display: block;
     position: relative;
-    width: 310px;
+    text-align: center;
+    width: 309px;
     color: #000;
     background-color: #fff;
     border-radius: 4px;
@@ -109,19 +113,19 @@
     background-color: #fff;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .scrollButtonLeft {
     position: absolute;
-    top: 85px;
-    left: 140px;
+    top: 44px;
+    left: 107px;
     z-index: 2;
 }
 
@@ -132,7 +136,7 @@
 
 .scrollButtonRight {
     position: absolute;
-    top: 85px;
+    top: 44px;
     z-index: 2;
-    right: 160px;
+    right: 115px;
 }

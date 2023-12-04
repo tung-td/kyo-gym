@@ -82,9 +82,17 @@ body {
   background-color: #ce6f6d73;
 }
 
-/* Ẩn thanh cuộn dọc */
 ::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
 }
 
 body {

@@ -38,4 +38,26 @@ export const getDetailDay = async (courseId, dayId) => {
     }
 };
 
+// GET COMMENT OF EXERCISES IN A DAY
+export const getComment = async (courseId, dayId) => {
+    try {
+        const res = await request.get(`/course/${courseId}/day/${dayId}/comment`);
+        return res;
+    } catch (error) {
+        console.log('Error fetching comments', error);
+        throw error;
+    }
+}
+
+// GET COMMENT OF EXERCISES IN A DAY
+export const postComment = async (data) => {
+    try {
+        const res = await request.post(`/comment/create`, data);
+        return res;
+    } catch (error) {
+        console.log('Error fetching comments', error);
+        throw error;
+    }
+}
+
 export * as collectionService from './collectionService';

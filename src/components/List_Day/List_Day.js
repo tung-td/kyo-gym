@@ -54,7 +54,6 @@ const List_Day = () => {
                                 onClick={() => handleCardClick(day.dayId)}
                             >
                                 <h3 className={styles.title}>{day.dayName}</h3>
-                                <p className={styles.small}>Card description with lots of great facts and interesting details.</p>
                                 <div className={styles.go_corner}>
                                     <div className={styles.go_arrow}>
                                         →

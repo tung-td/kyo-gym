@@ -5,6 +5,8 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { collectionService } from '../../service/collectionService';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+// import Skeleton from '@mui/material/Skeleton';
+// import Stack from '@mui/material/Stack';
 
 const CollectionCard = ({ id, title, image, duration }) => {
 
@@ -54,7 +56,7 @@ const Collections_card = ({ selectedCategory }) => {
             const cards = await collectionService.getCards();
             setDataCourse(cards);
         } catch (error) {
-            console.log(error)
+            console.error(error);
         }
     }
 
@@ -64,9 +66,8 @@ const Collections_card = ({ selectedCategory }) => {
 
     const filteredCards = dataCourse.filter(course => {
         if (selectedCategory === 'All') {
-            return true; // Hiển thị tất cả các card nếu 'All' được chọn
+            return true;
         } else {
-            // Lọc theo loại khóa được chọn
             return course.courseType.courseTypeName === selectedCategory;
         }
     });

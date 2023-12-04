@@ -58,7 +58,7 @@ axiosInstance.interceptors.request.use((config) => {
 
 axiosInstance.interceptors.response.use(
     (response) => {
-        if (response.data.message == 'Error -> Not authenticated') {
+        if (response.data.message === 'Error -> Not authenticated') {
             if (
                 !window.location.href.includes('login') &&
                 !window.location.href.includes('register')

@@ -1,18 +1,26 @@
 .tab_info_cmt {
     width: 1170px;
     max-height: 600px;
-    overflow-y: auto;
     padding: 10px;
+    display: flex;
 }
 
 .commentContainer {
     list-style: none;
-    padding: 10px;
+    padding: 10px 0px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+}
+
+.summitComment {
+    display: flex;
+    flex-direction: column;
+    margin-left: 42px;
+    margin-bottom: 30px;
+    width: 38rem;
 }
 
 .avatarNameContainer {
@@ -66,11 +74,13 @@
 }
 
 .commentInput {
-    width: 60%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 10px;
+    margin-bottom: 10px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .commentSubmit {
@@ -80,22 +90,84 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 126px;
 }
 
 .commentSubmit:hover {
     background-color: #0056b3;
 }
 
-.summitComment {
+.customerReview {
+    width: 100%;
     display: flex;
-    margin-left: 42px;
-    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ulComment {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 5px 20px;
+    margin-left: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 .tab_info_cmt {
     color: #000;
     max-height: 440px;
-    /* Đặt chiều cao tối đa cho phần danh sách bình luận */
     overflow-y: auto;
-    /* Tạo thanh cuộn theo chiều dọc khi nội dung vượt quá chiều cao */
+}
+
+.customerReview>h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.ava_name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.boxRating {
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    margin: 0px 1px;
+    font-size: 20px !important;
+}
+
+.starRating {
+    margin: 20px 0px;
+}
+
+.commentRating {}
+
+.ulComment {
+    background-color: #fafafb;
+    overflow-y: auto;
+    border-radius: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: dark transparent;
+}
+
+.ulComment::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ulComment::-webkit-scrollbar {
+    display: initial !important;
+}
+
+.ulComment::-webkit-scrollbar-thumb {
+    background-color: dark;
+}
+
+.ulComment::-webkit-scrollbar-track {
+    background-color: transparent;
 }
