@@ -60,4 +60,13 @@ export const postComment = async (data) => {
     }
 }
 
+export const postRecommend = async (data) => {
+    try {
+        const res = await request.post(`/track-data-ai/recommend-course`, data);
+        return res
+    } catch (error) {
+        console.log('Error fetching recommend course', error);
+    }
+}
+
 export * as collectionService from './collectionService';

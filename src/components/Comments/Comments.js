@@ -19,10 +19,6 @@ const Comments = ({ exercise, userData }) => {
         const getCommentOfExercise = async () => {
             try {
                 const comment = await collectionService.getComment(courseId, dayId);
-
-                console.log('Type of comment:', typeof comment);
-                console.log('Content of comment:', comment);
-
                 // Kiểm tra nếu comment không phải là mảng, gán giá trị mảng rỗng cho filteredComment
                 const filteredComment = Array.isArray(comment)
                     ? comment.filter(commentItem =>
@@ -37,7 +33,6 @@ const Comments = ({ exercise, userData }) => {
                 console.log(error);
             }
         }
-
         getCommentOfExercise();
         console.log(exercise.exerciseId);
     }, [courseId, dayId, exercise.exerciseId]);
@@ -48,7 +43,7 @@ const Comments = ({ exercise, userData }) => {
         const newComment = {
             commentText,
             rating,
-            customer: "2",
+            customer: userData.customerId,
             exercise: exercise.exerciseId
         }
 

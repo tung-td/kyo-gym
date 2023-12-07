@@ -5,8 +5,6 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { collectionService } from '../../service/collectionService';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-// import Skeleton from '@mui/material/Skeleton';
-// import Stack from '@mui/material/Stack';
 
 const CollectionCard = ({ id, title, image, duration }) => {
 

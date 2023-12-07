@@ -6,6 +6,7 @@ import eclipse from '../../images/Ellipse_Banner.png'
 import star from '../../images/Star.png'
 import cal from '../../images/circle_cal.png'
 import react from '../../images/react.png'
+import { Link } from 'react-router-dom';
 
 import ChartCircle from '../ChartCircle/ChartCircle';
 
@@ -29,7 +30,9 @@ const Banner = () => {
                     <p className={styles.typo_des}>Discover your strongest self through the power of fitness. Join us and unlock a stronger, healthier you.</p>
                 </div>
 
-                <button className={styles.bn_left_btn}>start now</button>
+                <Link to="/recommend" style={{ textDecoration: 'none', color: '#fff' }} className={styles.bn_left_btn}>
+                    Start now
+                </Link>
             </div>
             <div className={styles.bn_center}>
                 <img alt="img" src={runner} className={styles.runner}></img>

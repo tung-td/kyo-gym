@@ -17,10 +17,8 @@ const BMI = () => {
             return;
         }
 
-        const bmiResult = weightInKg / (heightInM * heightInM);
-
-        const roundedBMI = bmiResult.toFixed(2);
-        setBmi(roundedBMI)
+        const bmiResult = (weightInKg / (heightInM * heightInM)).toFixed(2);
+        setBmi(bmiResult)
     }
 
     return (

@@ -11,6 +11,7 @@ import Recipe from './pages/Recipe';
 import Blog from './pages/Blog';
 import Register from './components/Register/Register';
 import User from './pages/User';
+import Recommend from './pages/Recommend';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
       <Route path="/collections" element={<Collections />} />
       <Route path="/collections/:courseId" element={<CollectionsDetail />} />
       <Route path="/collections/:courseId/days/:dayId" element={<Workout />} />
+      <Route path='/recommend' element={<Recommend />} />
     </Routes>
   );
 }
