@@ -1,19 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { collectionService } from '../../service/collectionService';
 import Step1 from '../Steps/Step1';
 import Step2 from '../Steps/Step2';
 import Step3 from '../Steps/Step3';
 import Step4 from '../Steps/Step4';
 import StepSubmit from '../Steps/StepSubmit';
+import { useAuth } from '../../AuthContext'
+import { request } from '../../utils/axiosInstance';
+import { useNavigate } from 'react-router-dom';
 
 const Question = () => {
+    const { user } = useAuth();
+    const [userData, setUserData] = useState([]);
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const res = await request.get('/customer/detail')
+                setUserData(res)
+            } catch (error) {
+                console.log("Error fetching user information", error);
+            }
+        }
+
+        if (user) {
+            fetchUserData();
+        }
+    }, [user])
+
+    const [submitSurveyResponse, setSubmitSurveyResponse] = useState(null);
+
     const [formData, setFormData] = useState({
         activity_level: '',
         age: '',
         gender: '',
         bmi: '',
         training_goals: '',
-        training_history: ''
+        training_history: '',
+        customerId: undefined
     });
 
     const [currentStep, setCurrentStep] = useState(1);
@@ -21,7 +47,8 @@ const Question = () => {
     const handleChange = (e) => {
         setFormData((prevFormData) => ({
             ...prevFormData,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
+            customerId: userData.customerId
         }));
     };
 
@@ -33,15 +60,17 @@ const Question = () => {
         setCurrentStep(currentStep - 1);
     };
 
+    console.log('formData', formData);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log('formData', formData)
-
         if (Object.values(formData).every(value => value !== '')) {
             try {
-                const submitSurveyResponse = await collectionService.postRecommend(formData);
-                console.log('submitSurveyResponse', submitSurveyResponse.recommendedCourses);
+                const survey = await collectionService.postRecommend(formData);
+                setSubmitSurveyResponse(survey.recommendedCourses);
+                console.log('submitSurveyResponse', submitSurveyResponse);
+                // navigate('/collections');
             } catch (error) {
                 console.log(error);
             }

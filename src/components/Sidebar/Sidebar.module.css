@@ -1,7 +1,7 @@
 .container {
     display: flex;
     width: 342px;
-    height: 586px;
+    height: 662px;
     padding: 24px;
     flex-direction: column;
     align-items: flex-start;
@@ -31,4 +31,15 @@
 .item:hover {
     border-radius: 8px;
     background: #EDF1FF;
+}
+
+.recommend {
+    background-color: var(--color-red-body);
+    color: #fff;
+    border-radius: 8px;
+}
+
+.recommend:hover {
+    background-color: var(--color-red-body);
+    opacity: 0.9;
 }

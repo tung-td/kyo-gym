@@ -4,16 +4,18 @@
 }
 
 .appBar {
-    background-color: #37383c !important;
     box-shadow: unset;
+    background-color: #37383c !important;
 }
 
 .container {
-    background-color: #37383c !important;
     border-radius: 11px;
     margin-top: 20px;
     padding-left: 10px !important;
     padding-right: 57px !important;
+    max-width: 1393px !important;
+    margin-top: unset;
+    background-color: #37383c !important;
 }
 
 .menuItem {
@@ -24,9 +26,20 @@
 
 .menuItemText {
     font-size: 17px !important;
-    color: #fff !important;
     margin: 0 8px !important;
     line-height: 0.1 !important;
+
+}
+
+.menuItemText>a>p {
+    padding: 6px 0px;
+    color: #ffffff !important;
+    transition: all 2s ease !important;
+    transition-delay: 1s;
+}
+
+.menuItemText>a>p:hover {
+    border-bottom: 1px solid;
 }
 
 .SearchIconWrapper {
@@ -44,8 +57,6 @@
     background-color: rgba(255, 255, 255, 0.15);
     margin-right: 8px;
     margin-left: 0;
-}
-
-.Search:hover {
-    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    background-color: #f0ece838;
 }

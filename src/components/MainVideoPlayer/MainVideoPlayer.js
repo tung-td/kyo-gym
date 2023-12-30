@@ -6,14 +6,9 @@ import styles from "./MainVideoPlayer.module.css";
 
 const MainVideoPlayer = ({ videos, setVideos, selectedVideo, setSelectedVideo }) => {
 
-    const handleCommentSubmit = (e) => {
-        e.preventDefault();
-    };
-
     return (
         <div className={styles.container}>
-            <VideoPlayer exercise={selectedVideo} onCommentSubmit={handleCommentSubmit} meals={meals} />
-            <ListVideo videos={videos} onVideoSelect={setSelectedVideo} />
+            <VideoPlayer exercise={selectedVideo} meals={meals} videos={videos} onVideoSelect={setSelectedVideo} />
         </div>
     )
 }

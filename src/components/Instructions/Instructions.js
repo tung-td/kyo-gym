@@ -1,17 +1,13 @@
 import React from 'react';
 import styles from './Instructions.module.css';
+import Chip from '@mui/material/Chip';
 
 const Instructions = ({ exercise }) => {
-
-    // Nhầm giữa des vs instruc
     const separatedInstructions = exercise && exercise.exerciseDescription ? exercise.exerciseDescription.split('.').filter(sentence => sentence.trim() !== '') : [];
 
 
     return (
         <div className={styles.tab_info}>
-            <div>
-                <img src={exercise.videoUrl} alt={exercise.name} />
-            </div>
             <div>
                 <p><span className={styles.video_author}>Body target: </span><span>{exercise.target}</span></p>
                 <p><span className={styles.video_author}>Body part: </span><span>{exercise.bodyPart}</span></p>

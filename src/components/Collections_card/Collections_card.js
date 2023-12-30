@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { collectionService } from '../../service/collectionService';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import Button from '@mui/material/Button';
 
 const CollectionCard = ({ id, title, image, duration }) => {
 
@@ -46,7 +47,7 @@ const CollectionCard = ({ id, title, image, duration }) => {
     );
 };
 
-const Collections_card = ({ selectedCategory }) => {
+const Collections_card = ({ selectedCategory, recommendedCourses }) => {
     const [dataCourse, setDataCourse] = useState([]);
 
     const getCardsFunction = async () => {
@@ -63,7 +64,9 @@ const Collections_card = ({ selectedCategory }) => {
     }, []);
 
     const filteredCards = dataCourse.filter(course => {
-        if (selectedCategory === 'All') {
+        if (selectedCategory === 'Recommend') {
+            return recommendedCourses.some(recommendedCourse => recommendedCourse.courseId === course.courseId);
+        } else if (selectedCategory === 'All') {
             return true;
         } else {
             return course.courseType.courseTypeName === selectedCategory;
@@ -72,16 +75,31 @@ const Collections_card = ({ selectedCategory }) => {
 
     return (
         <div className={styles.collection}>
-            {filteredCards.map(course => (
-                <CollectionCard
-                    key={course.courseId}
-                    id={course.courseId}
-                    title={course.courseName}
-                    description={course.description}
-                    duration={course.duration}
-                    image={course.image}
-                />
-            ))}
+            {filteredCards.length > 0 ? (
+                filteredCards.map(course => (
+                    <CollectionCard
+                        key={course.courseId}
+                        id={course.courseId}
+                        title={course.courseName}
+                        description={course.description}
+                        duration={course.duration}
+                        image={course.image}
+                    />
+                ))
+            ) : (
+                <div className={styles.bn_left}>
+                    <div className={styles.bn_left_1}>
+                        <p className={styles.typo}><span className={styles.typo_red}>No</span> recommended courses found</p>
+                        <p className={styles.typo_des}>
+                            <Button variant="contained" className={styles.bn_left_btn}>
+                                <Link to="/recommend" style={{ color: '#fff' }}>
+                                    Start now
+                                </Link>
+                            </Button>
+                            <span>to receive personalized recommendations.</span></p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

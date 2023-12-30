@@ -1,5 +1,5 @@
 .banner_container {
-    padding: 37px 202px !important;
+    padding: 37px 288px !important;
     display: flex;
     justify-content: space-between;
     background-color: var(--color-yellow-white);
@@ -14,7 +14,7 @@
 .typo {
     color: var(--cold-grey-80, #37383C);
     font-family: Roboto;
-    font-size: 52px;
+    font-size: 46px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -28,7 +28,7 @@
 .typo_des {
     color: var(--cold-grey-40, #9A9EA5);
     font-family: Roboto;
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -68,7 +68,7 @@
 
 .bn_center {
     position: relative;
-    margin-left: 450px;
+    margin-left: 364px;
 }
 
 .runner {
@@ -97,13 +97,13 @@
 
 .rating {
     display: flex;
-    width: 274px;
-    height: 77px;
-    padding: 17px;
+    width: 215px;
+    height: 63px;
+    padding: 16px;
     justify-content: center;
     align-items: flex-start;
     flex-shrink: 0;
-    border-radius: 15px;
+    border-radius: 8px;
     background: #37383C;
     box-shadow: 0px 7px 20px 0px rgba(115, 116, 156, 0.08);
 }
@@ -115,8 +115,8 @@
 }
 
 .star {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     fill: #FFD66C;
     stroke-width: 1.438px;
     stroke: #EFB153;
@@ -125,7 +125,7 @@
 .number_rating {
     color: #FFF;
     font-family: Poppins;
-    font-size: 26px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -136,7 +136,7 @@
     color: #FFF;
     text-align: center;
     font-family: Poppins;
-    font-size: 14px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;

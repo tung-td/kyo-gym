@@ -14,7 +14,7 @@ const Recipe = ({ meals }) => {
     return (
         <div>
             {meals?.map((meal, index) => (
-                <TableContainer key={index} component={Paper}>
+                <TableContainer key={index} component={Paper} style={{ width: '99%', padding: '18px' }}>
                     <Typography variant="h6">{meal.meal}</Typography>
                     <Table>
                         <TableHead>

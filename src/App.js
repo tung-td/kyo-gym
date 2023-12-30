@@ -12,6 +12,10 @@ import Blog from './pages/Blog';
 import Register from './components/Register/Register';
 import User from './pages/User';
 import Recommend from './pages/Recommend';
+import AdminPage from './pages/Admin/AdminPage'
+import NewExercise from './pages/Admin/NewExercise';
+import EditExercise from './pages/Admin/EditExercise';
+import EditCustomer from './pages/Admin/EditCustomer';
 
 function App() {
 
@@ -28,6 +32,10 @@ function App() {
       <Route path="/collections/:courseId" element={<CollectionsDetail />} />
       <Route path="/collections/:courseId/days/:dayId" element={<Workout />} />
       <Route path='/recommend' element={<Recommend />} />
+      <Route path='/newexercise' element={<NewExercise />} />
+      <Route path='/editexercise/:id' element={<EditExercise />} />
+      <Route path='/editcustomer/:id' element={<EditCustomer />} />
+      <Route path='/admin' element={<AdminPage />} />
     </Routes>
   );
 }

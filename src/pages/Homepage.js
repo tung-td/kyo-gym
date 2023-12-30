@@ -8,25 +8,32 @@ import Recipes from "../components/Recipes/Recipes";
 import Review from "../components/Review/Review";
 import Blog from "../components/Blog/Blog";
 import Footer from "../components/Footer/Footer";
-// import { useAuth } from "../AuthContext";
+import { useParallax } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
+import imgIcon from '../images/Dumbell_02.png'
+import imgIconBell from '../images/Kettlebell_03.png'
 
 const Homepage = () => {
-    // const { user } = useAuth();
-
-    // {user ? ( // Check if the user is logged in
-    //             <div>
-
-    //                 {/* Other content for authenticated users */}
-    //             </div>
-    //         ) : (
-    //             <h1>Please log in to view the content</h1>
-    //         )}    
 
     return (
         <div>
             <Header />
+            <Parallax
+                translateY={[40, 200]}
+                speed={30}
+                style={{ height: '198px', position: 'absolute', left: '268px' }}
+            >
+                <img src={imgIcon} style={{ height: '300px', width: '300px' }}></img>
+            </Parallax>
             <Banner />
             <BMICalculator />
+            <Parallax
+                translateY={[0, 200]}
+                speed={30}
+                style={{ height: '200px', position: 'absolute', right: '150px' }}
+            >
+                <img src={imgIconBell} style={{ height: '300px', width: '300px' }}></img>
+            </Parallax>
             <Courses />
             <Recipes />
             <Coaches />

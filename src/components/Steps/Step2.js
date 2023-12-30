@@ -15,8 +15,6 @@ const Step2 = ({ formData, handleChange, handleNext, handlePrevious }) => {
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('');
 
-    // 188cm - 70kg -> bmi = 19.72
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         if (name === 'height') {
@@ -31,7 +29,7 @@ const Step2 = ({ formData, handleChange, handleNext, handlePrevious }) => {
         const weightValue = parseFloat(weight);
 
         if (heightValue > 0 && weightValue > 0 && !isNaN(heightValue) && !isNaN(weightValue)) {
-            const bmiValue = (weightValue / (heightValue * heightValue)).toFixed(2);
+            const bmiValue = (weightValue / (heightValue * heightValue)).toFixed(0);
             handleChange({
                 target: {
                     name: 'bmi',

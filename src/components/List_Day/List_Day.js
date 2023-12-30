@@ -1,74 +1,125 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import styles from './List_Day.module.css';
+import { Button, Popover, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faArrowLeft, faXmark, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import { collectionService } from '../../service/collectionService';
+import styles from './List_Day.module.css';
+
+// ... (import statements)
 
 const List_Day = () => {
-
     const [days, setDays] = useState(null);
-
     const { courseId } = useParams();
     const containerRef = useRef(null);
     const [selectedCard, setSelectedCard] = useState(1);
+    const [anchorEl, setAnchorEl] = useState(document.body); // Set initial value to body element
+    const [lastScrollTop, setLastScrollTop] = useState(0);
 
     useEffect(() => {
         const getDaysOfCourse = async () => {
             try {
-                const daysOfCourse = await collectionService.getDays(courseId)
-                setDays(daysOfCourse.days)
+                const daysOfCourse = await collectionService.getDays(courseId);
+                setDays(daysOfCourse.days);
             } catch (err) {
                 console.log(err);
             }
-        }
+        };
         getDaysOfCourse();
-    }, [courseId])
+    }, [courseId]);
 
-
-    const scroll = (scrollOffset) => {
-        containerRef.current.scrollBy({
-            top: 0,
-            left: scrollOffset,
-            behavior: 'smooth'
-        });
-    };
-
-    const handleCardClick = (dayId) => {
+    const handleCardClick = (dayId, event) => {
         setSelectedCard(dayId);
+        if (event) {
+            setAnchorEl(event.currentTarget);
+        }
     };
+
+    const openPopup = (event) => {
+        setAnchorEl(event ? event.currentTarget : document.body);
+    };
+
+    const closePopup = () => {
+        setAnchorEl(null);
+    };
+
+    const handleScroll = () => {
+        const st = window.scrollY;
+
+        // Check whether the user has scrolled before deciding to open or close the popover
+        if (st < lastScrollTop || lastScrollTop === 0) {
+            openPopup();
+        } else {
+            closePopup();
+        }
+
+        setLastScrollTop(st);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [handleScroll]);
 
     return (
         <div className={styles.List_Day_container}>
-            <button className={styles.scrollButtonLeft} onClick={() => scroll(-1000)}>
-                <FontAwesomeIcon icon={faArrowLeft} />
-            </button>
-            <div className={styles.container} style={{ overflowX: 'auto' }}>
-                <div ref={containerRef} className={styles.cardContainer}>
-                    {days && Array.isArray(days) && days.map(day => (
-                        <div key={day.dayId} className={styles.cardWrapper}>
-                            <Link
-                                className={`${styles.card1} ${selectedCard === day.dayId ? styles.selectedCard : ''}`}
-                                to={`/collections/${courseId}/days/${day.dayId}`}
-                                onClick={() => handleCardClick(day.dayId)}
-                            >
-                                <h3 className={styles.title}>{day.dayName}</h3>
-                                <div className={styles.go_corner}>
-                                    <div className={styles.go_arrow}>
-                                        →
-                                    </div>
-                                </div>
-                            </Link>
+            {/* Button to Open Popup */}
+            <Button onClick={openPopup} style={{ color: '#fff', fontSize: '17px' }}>
+                Days
+                <FontAwesomeIcon icon={faCalendarCheck} color='#37383c' style={{ marginLeft: '6px', marginBottom: '5px', color: '#fff', fontSize: '17px' }} />
+            </Button>
+
+            {/* Popover */}
+            <Popover
+                open={Boolean(anchorEl)}
+                anchorEl={anchorEl}
+                onClose={closePopup}
+                disableScrollLock={true}
+                classes={{
+                    paper: styles.popoverPaper,
+                }}
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+            >
+                <div className={styles.popup}>
+                    <div className={styles.popupContent}>
+                        <Typography variant="h6">Choose Days</Typography>
+                        <Button className={styles.popupClose} onClick={closePopup}>
+                            <FontAwesomeIcon icon={faXmark} style={{ color: '#37383c' }} />
+                        </Button>
+                        <div className={styles.popupDays}>
+                            {days &&
+                                Array.isArray(days) &&
+                                days.map((day) => (
+                                    <Link
+                                        key={day.dayId}
+                                        to={`/collections/${courseId}/days/${day.dayId}`}
+                                        className={`${styles.popupDay} ${selectedCard === day.dayId ? styles.selectedCard : ''
+                                            }`}
+                                        onClick={() => {
+                                            handleCardClick(day.dayId);
+                                            closePopup();
+                                        }}
+                                    >
+                                        {day.dayName}
+                                    </Link>
+                                ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
-            </div>
-            <button className={styles.scrollButtonRight} onClick={() => scroll(1000)}>
-                <FontAwesomeIcon icon={faArrowRight} />
-            </button>
+            </Popover>
         </div>
     );
 };
 
 export default List_Day;
+

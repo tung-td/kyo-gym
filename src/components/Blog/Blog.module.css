@@ -2,7 +2,7 @@
     width: 100%;
     flex-shrink: 0;
     background-color: var(--color-yellow-white);
-    padding: 0px 309px;
+    padding: 0px 288px;
     position: relative;
     height: 800px;
 }
@@ -10,7 +10,7 @@
 .title_top {
     color: #CF4044;
     font-family: Agency FB;
-    font-size: 32px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -38,7 +38,7 @@
 .title_body {
     color: #2B2024;
     font-family: Agency FB;
-    font-size: 50px;
+    font-size: 35px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;

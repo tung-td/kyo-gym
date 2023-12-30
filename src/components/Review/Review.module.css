@@ -20,13 +20,13 @@
 
 .slider {
     display: flex;
-    width: 1600px;
-    height: 500px;
+    width: 1338px;
+    height: 380px;
     background: #FFF;
     box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.10);
-    padding: 149px;
+    padding: 80px;
     position: relative;
-    margin-bottom: 155px;
+    margin-bottom: 90px;
 }
 
 .slider_title {

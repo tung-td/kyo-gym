@@ -16,7 +16,7 @@ const Workout = () => {
     useEffect(() => {
         const getExercisesOfCourse = async () => {
             try {
-                const exercises = await collectionService.getDetailDay(courseId, dayId)
+                const exercises = await collectionService.getDetailDay(courseId, dayId);
                 setVideos(exercises);
                 setSelectedVideo(exercises[0]);
             } catch (err) {
@@ -31,7 +31,7 @@ const Workout = () => {
             <Header />
             <List_Day />
             <MainVideoPlayer videos={videos} setVideos={setVideos} selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
-            <Related />
+            {/* <Related /> */}
             <Footer />
         </div>
     )

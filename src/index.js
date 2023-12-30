@@ -5,13 +5,16 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AuthProvider } from './AuthContext';
 import { BrowserRouter } from 'react-router-dom';
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
     <AuthProvider>
-      <App />
+      <ParallaxProvider>
+        <App />
+      </ParallaxProvider>
     </AuthProvider>
   </BrowserRouter>
 

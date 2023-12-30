@@ -6,35 +6,6 @@ const StepSubmit = ({ handlePrevious }) => {
     return (
         <div className={styles.groupCard}>
             <div className={styles.wrapCard}>
-                <div className={styles.loadSteps}>
-                    <div className={styles.stepCircle}>
-                        <p className={styles.stepNumber}>1</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                            <circle cx="17.2012" cy="17.3235" r="17" fill="#CF4044" />
-                        </svg>
-                    </div>
-                    <div className={styles.lineStepFull}></div>
-                    <div className={styles.stepCircle}>
-                        <p className={styles.stepNumber}>2</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                            <circle cx="17.2012" cy="17.3235" r="17" fill="#CF4044" />
-                        </svg>
-                    </div>
-                    <div className={styles.lineStepFull}></div>
-                    <div className={styles.stepCircle}>
-                        <p className={styles.stepNumber}>3</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                            <circle cx="17.2012" cy="17.3235" r="17" fill="#CF4044" />
-                        </svg>
-                    </div>
-                    <div className={styles.lineStepFull}></div>
-                    <div className={styles.stepCircle}>
-                        <p className={styles.stepNumber}>4</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                            <circle cx="17.2012" cy="17.3235" r="17" fill="#CF4044" />
-                        </svg>
-                    </div>
-                </div>
                 <div className={styles.line}></div>
                 <div className={styles.gridCard}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="158" height="145" viewBox="0 0 158 145" fill="none">
@@ -62,7 +33,6 @@ const StepSubmit = ({ handlePrevious }) => {
                     <Button
                         type="submit"
                         variant="contained"
-                        onClick={handlePrevious}
                         sx={{ marginTop: 10, borderRadius: 55, color: '#fff', backgroundColor: '#CF4044', width: '8rem' }}
                         color="error"
                     >

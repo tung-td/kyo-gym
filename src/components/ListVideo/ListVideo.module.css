@@ -1,14 +1,26 @@
 .videoContainer {
     display: flex;
+    flex-direction: column;
     background-color: #fff;
     border-radius: 10px;
     margin-right: 10px;
+    height: 650px;
 }
 
 .videoList {
     display: flex;
     flex-direction: column;
-    width: 392px;
+    width: 18rem;
+    overflow-y: auto;
+}
+
+.videoList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.videoList::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
 }
 
 .searchBar {
@@ -20,9 +32,9 @@
     font-weight: 400;
     line-height: 16px;
     border: unset;
-    border-radius: 8px;
+    border-radius: 3px;
     margin: 27px;
-    height: 70px;
+    height: 42px;
     padding: 20px;
 }
 
@@ -50,12 +62,18 @@
     box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.11), 11px 15px 8px 0px #00000003;
 }
 
+.videoItemSelected .videoThumbnail {
+    background-color: #549b36 !important;
+}
+
 .videoThumbnail {
-    width: 100px;
-    height: 100px;
+    width: 20px;
+    height: 76px;
     margin-right: 20px;
+    padding-right: 24px;
     object-fit: cover;
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 2px 0px 0px 2px;
+    background-color: var(--color-red-body);
 }
 
 .title {

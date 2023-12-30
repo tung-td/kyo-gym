@@ -90,7 +90,7 @@ const Header = () => {
         <AppBar position="static" className={styles.appBar}>
             <Container maxWidth="xl" className={styles.container}>
                 <Toolbar disableGutters>
-                    <MenuItem style={{ borderRadius: '50%' }}>
+                    <MenuItem style={{ borderRadius: '50%', height: '135px' }}>
                         <Link to='/'><img src={logo} alt='logo' className={styles.kyoRoundLogo1} /></Link>
                     </MenuItem>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -121,6 +121,7 @@ const Header = () => {
                             onClose={handleCloseNavMenu}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
+                                color: '#fff'
                             }}
                         >
                             {pages.map((page) => (

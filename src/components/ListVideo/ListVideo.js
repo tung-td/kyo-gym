@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ListVideo.module.css';
-import avt from '../../images/video_avt.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -50,22 +49,22 @@ const ListVideo = ({ videos, onVideoSelect }) => {
 
     return (
         <div className={styles.videoContainer}>
+            <input
+                type="text"
+                placeholder="Search by exercise name"
+                value={searchTerm}
+                onChange={handleSearch}
+                className={styles.searchBar}
+            />
             <div className={styles.videoList}>
-                <input
-                    type="text"
-                    placeholder="Search by exercise name"
-                    value={searchTerm}
-                    onChange={handleSearch}
-                    className={styles.searchBar}
-                />
                 {filteredVideos.length > 0 ? (
-                    filteredVideos?.slice(0, 10).map((video) => (
+                    filteredVideos?.map((video) => (
                         <div
                             key={video.exerciseId}
                             onClick={() => handleVideoSelect(video)}
                             className={`${styles.videoItem} ${selectedVideo === video ? styles.videoItemSelected : ''}`}
                         >
-                            <img src={avt} alt={video.exerciseName} className={styles.videoThumbnail} />
+                            <div className={styles.videoThumbnail}></div>
                             <div className={styles.videoInfo}>
                                 <h3 className={styles.title}>{video.exerciseName}</h3>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="179" height="7" viewBox="0 0 179 7" fill="none">
@@ -79,8 +78,6 @@ const ListVideo = ({ videos, onVideoSelect }) => {
                 ) : (
                     <p className={styles.notFound}>Not Found!</p>
                 )}
-
-
             </div>
         </div>
     );

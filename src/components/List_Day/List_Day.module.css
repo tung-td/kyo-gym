@@ -1,11 +1,14 @@
 .List_Day_container {
-    background-color: var(--color-yellow-white);
+    background-color: #37383c;
     display: flex;
-    padding: 10px 120px;
     position: relative;
     overflow-y: hidden !important;
     height: auto !important;
-
+    position: absolute;
+    left: 16px;
+    top: 161px;
+    border-radius: 3px;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 .cardContainer {
@@ -139,4 +142,43 @@
     top: 44px;
     z-index: 2;
     right: 115px;
+}
+
+.popupContent {
+    position: relative;
+    overflow: auto;
+    width: 274px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    align-items: center;
+}
+
+.popoverPaper {
+    top: 220px !important;
+    left: 15px !important;
+}
+
+.openPopupButton {
+    position: relative !important;
+}
+
+.popupClose {
+    position: absolute !important;
+    top: 13px;
+    color: #000;
+    right: 0;
+    padding: 6px 97px;
+}
+
+.popupDays {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.popupDay {
+    margin: 10px;
+    padding: 10px;
+    color: #000;
 }

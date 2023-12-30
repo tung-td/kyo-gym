@@ -92,3 +92,37 @@
     width: 366px;
     height: 244px;
 }
+
+.bn_left {}
+
+.typo {
+    color: var(--cold-grey-80, #37383C);
+    font-family: Roboto;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.typo_red {
+    color: var(--color-red-body);
+}
+
+.typo_des {
+    color: var(--cold-grey-40, #9A9EA5);
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bn_left_2 {
+    margin-top: 16px;
+}
+
+.bn_left_btn {
+    margin-right: 10px !important;
+    background-color: #c45a59 !important;
+}

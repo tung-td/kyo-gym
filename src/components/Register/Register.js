@@ -20,17 +20,36 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const Register = () => {
-    const { user, setUser } = useAuth();
+    const [isUser, setIsUser] = useState(false);
+
     const [name, setName] = useState('');
+    const [nameError, setNameError] = useState('');
+
     const [username, setUsername] = useState('');
+    const [usernameError, setUsernameError] = useState('');
+
     const [gender, setGender] = useState('');
-    const [dateOfBirth, setDateOfBirth] = useState(null);
-    const [address, setAddress] = useState('');
+
     const [phone, setPhone] = useState('');
+    const [phoneError, setPhoneError] = useState('');
+
+    const [dateOfBirth, setDateOfBirth] = useState(null);
+
     const [idCard, setIdCard] = useState('');
+    const [idCardError, setIdCardError] = useState('');
+
+    const [address, setAddress] = useState('');
+    const [addressError, setAddressError] = useState('');
+
     const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
+
     const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [confirmPasswordError, setConfirmPasswordError] = useState('');
+
     const navigate = useNavigate();
 
     const handleLogin = async () => {
@@ -39,16 +58,115 @@ const Register = () => {
 
     const defaultTheme = createTheme();
 
-    const handleRegister = async () => {
-        try {
-            // Chuyển đổi chuỗi 'true'/'false' thành giá trị boolean
+    const handleNameChange = (e) => {
+        const value = e.target.value;
+        setName(value);
 
-            // Kiểm tra mật khẩu và xác nhận mật khẩu
-            if (password !== confirmPassword) {
-                console.error('Mật khẩu và xác nhận mật khẩu không khớp');
-                return;
+        if (value.length < 3 || value.length > 50) {
+            setNameError('Họ tên phải có độ dài từ 3 đến 50 ký tự');
+        } else if (!/^[a-zA-ZÀ-Ỹà-ỹ ]+$/.test(value)) {
+            setNameError('Họ tên không được chứa ký tự đặc biệt hoặc số');
+        } else {
+            setNameError('');
+        }
+    };
+
+    const handleUsernameChange = (e) => { // THÊM ĐIỀU KIỆN KO TRÙNG
+        const value = e.target.value;
+        setUsername(value);
+
+        if (value.length < 3 || value.length > 50) {
+            setUsernameError('Họ tên phải có độ dài từ 3 đến 50 ký tự');
+        } else {
+            setUsernameError('');
+        }
+    };
+
+    const handlePhoneNumberChange = (e) => {
+        const value = e.target.value;
+        setPhone(value);
+
+        if (!/^\d+$/.test(value)) {
+            setPhoneError('Vui lòng chỉ nhập số');
+        } else if (value.length !== 10) {
+            setPhoneError('Number phải chứa 10 số')
+        } else {
+            const prefixes = /^(086|096|097|098|038|037|036|035|034|033|032|091|094|088|081|082|083|084|085|070|076|077|078|079|089|090|093|092|052|056|058|099|059|087)/;
+            if (!prefixes.test(value.substr(0, 3))) {
+                setPhoneError('Số điện thoại không hợp lệ, vui lòng kiểm tra lại tiền tố');
+            } else {
+                setPhoneError('');
             }
+        }
+    }
 
+    const handleIdCardChange = (e) => {
+        const value = e.target.value;
+        setIdCard(value);
+
+        if (!/^\d+$/.test(value)) {
+            setIdCardError('Vui lòng chỉ nhập số');
+        } else if (value.length !== 12) {
+            setIdCardError('Vui lòng nhập đủ 12 số');
+        } else if (!/^(001|002|004|006|008|010|011|012|014|015|017|019|020|022|024|025|026|027|030|031|033|034|035|036|037|038|040|042|044|045|046|048|049|051|052|054|056|058|060|062|064|066|067|068|070|072|074|075|077|079|080|082|083|084|086|087|089|091|092|093|094|095|096)([0-9])(00|0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|6[0-9]|7[0-9]|8[0-9]|9[0-9])([0-9]{6})$/.test(value)) {
+            setIdCardError('Số căn cước công dân không hợp lệ');
+        } else {
+            setIdCardError('');
+        }
+    }
+
+    const handleAddressChange = (e) => {
+        const value = e.target.value;
+        setAddress(value)
+
+        if (value.length < 5) {
+            setAddressError('Địa chỉ ngắn quá (< 5 ký tự)')
+        } else if (value.length > 100) {
+            setAddressError('Địa chỉ dài quá (> 100 ký tự)')
+        } else {
+            setAddressError('')
+        }
+    }
+
+    const handleEmailChange = (e) => { // THEM KIEM TRA TRUNG TAI KHOAN EMAIL
+        const value = e.target.value;
+        setEmail(value)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(value)) {
+            setEmailError('Email không đúng định dạng')
+        } else if (value.length > 30) {
+            setEmailError('Email qua dai (> 30 ký tự)')
+        } else {
+            setEmailError('')
+        }
+    }
+
+    const handlePasswordChange = (e) => {
+        const value = e.target.value;
+        setPassword(value)
+
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+        if (!passwordRegex.test(value)) {
+            setPasswordError('Password chưa đủ mạnh. Yêu cầu ít nhất 8 ký tự, chứa ít nhất một chữ cái và một chữ số.');
+        } else {
+            setPasswordError('');
+        }
+    }
+
+    const handleConfirmPasswordChange = (e) => {
+        const value = e.target.value;
+        setConfirmPassword(value);
+
+        if (value !== password) {
+            setConfirmPasswordError('Confirm password không trùng khớp')
+        } else {
+            setConfirmPasswordError('')
+        }
+    }
+
+    const handleRegister = async (e) => {
+        try {
             const userData = {
                 name: name,
                 username: username,
@@ -62,12 +180,9 @@ const Register = () => {
             };
 
             const response = await axios.post('http://localhost:8080/api/v1/public/signup', userData);
-
+            console.log('userData', userData);
             if (response.status === 200) {
-                const token = response.data.token;
-                localStorage.setItem('token', token);
-                setUser(token);
-                navigate('/login');
+                // navigate('/login');
             } else {
                 console.error('Đăng ký không thành công');
             }
@@ -75,12 +190,6 @@ const Register = () => {
             console.error('Đã xảy ra lỗi:', error);
         }
     };
-
-    useEffect(() => {
-        if (user) {
-            navigate('/');
-        }
-    }, [navigate, user]);
 
     return (
         <div className={styles.myContainer}>
@@ -109,16 +218,34 @@ const Register = () => {
                                 <Typography component="h1" variant="h5">
                                     Sign up
                                 </Typography>
-                                <Box component="form" Validate sx={{ mt: 3 }}>
+                                <Box component="form" Validate sx={{ mt: 3 }} onSubmit={handleRegister}>
                                     <Grid container spacing={2}>
                                         <Grid item xs={12} sm={6}>
-                                            <TextField value={name} onChange={(e) => setName(e.target.value)} fullWidth id="name" label="Full name" />
+                                            <TextField
+                                                value={name}
+                                                onChange={handleNameChange}
+                                                fullWidth
+                                                id="name"
+                                                label="Full name"
+                                                required
+                                                error={!!nameError}
+                                                helperText={nameError}
+                                            />
                                         </Grid>
                                         <Grid item xs={12} sm={6}>
-                                            <TextField value={username} onChange={(e) => setUsername(e.target.value)} fullWidth id="username" label="User name" />
+                                            <TextField
+                                                value={username}
+                                                onChange={handleUsernameChange}
+                                                fullWidth
+                                                id="username"
+                                                label="User name"
+                                                required
+                                                error={!!usernameError}
+                                                helperText={usernameError}
+                                            />
                                         </Grid>
                                         <Grid item xs={12} sm={4}>
-                                            <FormControl fullWidth>
+                                            <FormControl fullWidth required>
                                                 <InputLabel htmlFor="gender">Gender</InputLabel>
                                                 <Select
                                                     label="Gender"
@@ -135,7 +262,16 @@ const Register = () => {
                                             </FormControl>
                                         </Grid>
                                         <Grid item xs={12} sm={8}>
-                                            <TextField value={phone} onChange={(e) => setPhone(e.target.value)} fullWidth id="phone" label="Phone number" />
+                                            <TextField
+                                                value={phone}
+                                                onChange={handlePhoneNumberChange}
+                                                fullWidth
+                                                id="phone"
+                                                label="Phone number"
+                                                required
+                                                error={!!phoneError}
+                                                helperText={phoneError}
+                                            />
                                         </Grid>
                                         <Grid item xs={12} >
                                             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -150,23 +286,70 @@ const Register = () => {
                                             </LocalizationProvider>
                                         </Grid>
                                         <Grid item xs={12}>
-                                            <TextField value={idCard} onChange={(e) => setIdCard(e.target.value)} fullWidth id="idCard" label="ID card" />
+                                            <TextField
+                                                value={idCard}
+                                                onChange={handleIdCardChange}
+                                                fullWidth
+                                                id="idCard"
+                                                label="ID card"
+                                                required
+                                                error={!!idCardError}
+                                                helperText={idCardError}
+                                            />
                                         </Grid>
                                         <Grid item xs={12}>
-                                            <TextField value={address} onChange={(e) => setAddress(e.target.value)} fullWidth id="address" label="Address" />
+                                            <TextField
+                                                value={address}
+                                                onChange={handleAddressChange}
+                                                fullWidth
+                                                id="address"
+                                                label="Address"
+                                                required
+                                                error={!!addressError}
+                                                helperText={addressError}
+                                            />
                                         </Grid>
                                         <Grid item xs={12}>
-                                            <TextField value={email} onChange={(e) => setEmail(e.target.value)} fullWidth id="email" label="Email" />
+                                            <TextField
+                                                value={email}
+                                                onChange={handleEmailChange}
+                                                fullWidth
+                                                id="email"
+                                                label="Email"
+                                                required
+                                                error={!!emailError}
+                                                helperText={emailError}
+                                            />
                                         </Grid>
                                         <Grid item xs={12}>
-                                            <TextField value={password} onChange={(e) => setPassword(e.target.value)} fullWidth id="password" type="password" label="Password" />
+                                            <TextField
+                                                value={password}
+                                                onChange={handlePasswordChange}
+                                                fullWidth
+                                                id="password"
+                                                type="password"
+                                                label="Password"
+                                                required
+                                                error={!!passwordError}
+                                                helperText={passwordError}
+                                            />
                                         </Grid>
                                         <Grid item xs={12}>
-                                            <TextField value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} fullWidth id="confirmPassword" type="password" label="Confirm Password" />
+                                            <TextField
+                                                value={confirmPassword}
+                                                onChange={handleConfirmPasswordChange}
+                                                fullWidth
+                                                id="confirmPassword"
+                                                type="password"
+                                                label="Confirm Password"
+                                                required
+                                                error={!!confirmPasswordError}
+                                                helperText={confirmPasswordError}
+                                            />
                                         </Grid>
                                     </Grid>
 
-                                    <Button onClick={handleRegister} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                                    <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} onClick={handleRegister}>
                                         Sign Up
                                     </Button>
                                     <Grid container justifyContent="flex-end">

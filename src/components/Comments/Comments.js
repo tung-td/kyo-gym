@@ -8,34 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as starFull } from '@fortawesome/free-solid-svg-icons';
 import { faStar as starNon } from '@fortawesome/free-regular-svg-icons';
 
-const Comments = ({ exercise, userData }) => {
-    const navigate = useNavigate();
-    const { courseId, dayId } = useParams();
-    const [listComment, setListComment] = useState([]);
-    const [commentText, setCommentText] = useState([]);
-    const [rating, setRating] = useState(1);
-
-    useEffect(() => {
-        const getCommentOfExercise = async () => {
-            try {
-                const comment = await collectionService.getComment(courseId, dayId);
-                // Kiểm tra nếu comment không phải là mảng, gán giá trị mảng rỗng cho filteredComment
-                const filteredComment = Array.isArray(comment)
-                    ? comment.filter(commentItem =>
-                        (commentItem.exerciseId === exercise.exerciseId)
-                        && (commentItem.courseId === exercise.courseId)
-                        && (commentItem.dayId === exercise.dayId)
-                    )
-                    : [];
-
-                setListComment(filteredComment);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        getCommentOfExercise();
-        console.log(exercise.exerciseId);
-    }, [courseId, dayId, exercise.exerciseId]);
+const Comments = ({ commentText, setCommentText, listComment, setListComment, rating, setRating, courseId, dayId, userData, exercise }) => {
 
     const handleCommentSubmit = async (e) => {
         e.preventDefault();
@@ -73,10 +46,10 @@ const Comments = ({ exercise, userData }) => {
 
     return (
         <div className={styles.tab_info_cmt}>
-            <form onSubmit={handleCommentSubmit} className={styles.summitComment}>
+            <form onSubmit={handleCommentSubmit} Validate className={styles.summitComment}>
                 <div className={styles.ava_name}>
                     <div className={styles.avatar}>
-                        <Avatar>Me</Avatar>
+                        <Avatar src={userData.customerImg} />
                     </div>
                     <div className={styles.name}>{userData.customerName}</div>
                 </div>
@@ -101,11 +74,11 @@ const Comments = ({ exercise, userData }) => {
                     className={styles.commentInput}
                     value={commentText}
                     onChange={(e) => setCommentText(e.target.value)}
+                    required
                 />
                 <button type="submit" className={styles.commentSubmit} >Submit</button>
             </form>
             <div className={styles.customerReview}>
-                <h1>Customer Review</h1>
                 <ul className={styles.ulComment}>
                     {Array.isArray(listComment) &&
                         [...listComment].reverse().map((comment) => (

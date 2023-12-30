@@ -13,7 +13,7 @@ const Recipes = () => {
             <p className={styles.title}>RECIPES</p>
             <div className={styles.body}>
                 <div className={styles.body_left}>
-                    <img alt="food" src={food_re} ></img>
+                    <img alt="food" src={food_re} height='470px'></img>
                 </div>
                 <div className={styles.body_center}>
                     <p className={styles.body_title}>Protein-packed power bowl</p>

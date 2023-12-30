@@ -21,7 +21,7 @@ const Step3 = ({ formData, handleChange, handleNext, handlePrevious }) => {
         { value: 'Bodyweight Squats', imageSrc: beginner },
         { value: 'Weight Loss', imageSrc: occasionally },
         { value: 'Maintain Shape', imageSrc: moderate },
-        { value: 'Maintain Shape', imageSrc: advanced },
+        { value: 'Build Muscle', imageSrc: advanced },
         { value: 'Increase Strength', imageSrc: regularly },
     ];
 
