@@ -1,0 +1,18 @@
+.tab_container {
+    border-radius: 16px !important;
+}
+
+.descriptionCell {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.instructionsCell {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

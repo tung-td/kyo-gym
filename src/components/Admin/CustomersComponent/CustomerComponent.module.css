@@ -1,0 +1,13 @@
+.tab_container {
+    margin-top: 20px;
+    border-radius: 16px !important;
+}
+
+.customerTableCell {
+    display: flex;
+    align-items: center;
+}
+
+.avatarContainer {
+    margin-right: 10px;
+}

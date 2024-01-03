@@ -21,7 +21,8 @@ const Collections = () => {
             try {
                 const res = await request.get('/customer/detail');
                 const uniqueRecommendedCourses = Array.from(new Set(res.recommendedCourses.map(course => course.courseId)))
-                    .map(courseId => res.recommendedCourses.find(course => course.courseId === courseId));
+                    .map(courseId => res.recommendedCourses.find(course => course.courseId === courseId))
+                    .filter(course => course.recommendedStatus === true);
 
                 setUserData({
                     ...res,

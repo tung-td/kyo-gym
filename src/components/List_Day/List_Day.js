@@ -7,14 +7,12 @@ import { faArrowRight, faArrowLeft, faXmark, faCalendarCheck } from '@fortawesom
 import { collectionService } from '../../service/collectionService';
 import styles from './List_Day.module.css';
 
-// ... (import statements)
-
 const List_Day = () => {
     const [days, setDays] = useState(null);
     const { courseId } = useParams();
     const containerRef = useRef(null);
     const [selectedCard, setSelectedCard] = useState(1);
-    const [anchorEl, setAnchorEl] = useState(document.body); // Set initial value to body element
+    const [anchorEl, setAnchorEl] = useState(document.body);
     const [lastScrollTop, setLastScrollTop] = useState(0);
 
     useEffect(() => {
@@ -27,7 +25,7 @@ const List_Day = () => {
             }
         };
         getDaysOfCourse();
-    }, [courseId]);
+    }, [courseId, days]);
 
     const handleCardClick = (dayId, event) => {
         setSelectedCard(dayId);
@@ -47,7 +45,6 @@ const List_Day = () => {
     const handleScroll = () => {
         const st = window.scrollY;
 
-        // Check whether the user has scrolled before deciding to open or close the popover
         if (st < lastScrollTop || lastScrollTop === 0) {
             openPopup();
         } else {
@@ -66,13 +63,11 @@ const List_Day = () => {
 
     return (
         <div className={styles.List_Day_container}>
-            {/* Button to Open Popup */}
             <Button onClick={openPopup} style={{ color: '#fff', fontSize: '17px' }}>
                 Days
                 <FontAwesomeIcon icon={faCalendarCheck} color='#37383c' style={{ marginLeft: '6px', marginBottom: '5px', color: '#fff', fontSize: '17px' }} />
             </Button>
 
-            {/* Popover */}
             <Popover
                 open={Boolean(anchorEl)}
                 anchorEl={anchorEl}
@@ -103,8 +98,7 @@ const List_Day = () => {
                                     <Link
                                         key={day.dayId}
                                         to={`/collections/${courseId}/days/${day.dayId}`}
-                                        className={`${styles.popupDay} ${selectedCard === day.dayId ? styles.selectedCard : ''
-                                            }`}
+                                        className={`${styles.popupDay} ${selectedCard === day.dayId ? styles.selectedCard : ''} ${day.status !== true ? styles.disabledCard : ''}`}
                                         onClick={() => {
                                             handleCardClick(day.dayId);
                                             closePopup();

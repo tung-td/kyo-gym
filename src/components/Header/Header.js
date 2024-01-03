@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { request } from '../../utils/axiosInstance';
+import { useAuth } from '../../AuthContext'
 import styles from './Header.module.css';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -85,6 +87,24 @@ const Header = () => {
         localStorage.removeItem('token');
         navigate('/login');
     };
+
+    // GET USER INFO
+    const { user } = useAuth();
+    const [userData, setUserData] = useState([]);
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const res = await request.get('/customer/detail')
+                setUserData(res)
+            } catch (error) {
+                console.log("Error fetching user information", error);
+            }
+        }
+
+        if (user) {
+            fetchUserData();
+        }
+    }, [user])
 
     return (
         <AppBar position="static" className={styles.appBar}>
@@ -181,7 +201,7 @@ const Header = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Avatar" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Avatar" src={userData.customerImg} />
                             </IconButton>
                         </Tooltip>
                         {token ? (

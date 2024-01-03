@@ -60,8 +60,6 @@ const Question = () => {
         setCurrentStep(currentStep - 1);
     };
 
-    console.log('formData', formData);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -69,8 +67,9 @@ const Question = () => {
             try {
                 const survey = await collectionService.postRecommend(formData);
                 setSubmitSurveyResponse(survey.recommendedCourses);
-                console.log('submitSurveyResponse', submitSurveyResponse);
-                // navigate('/collections');
+                if (submitSurveyResponse || survey) {
+                    navigate('/collections');
+                }
             } catch (error) {
                 console.log(error);
             }

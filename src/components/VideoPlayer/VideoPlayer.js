@@ -16,6 +16,7 @@ import Chip from '@mui/material/Chip';
 const VideoPlayer = ({ exercise, meals, videos, onVideoSelect }) => {
     const [lengthComment, setLengthComment] = useState(0);
     const [currentTab, setCurrentTab] = useState("instructions");
+    const { courseId, dayId } = useParams();
 
     const switchTab = (tab) => {
         setCurrentTab(tab);
@@ -25,9 +26,26 @@ const VideoPlayer = ({ exercise, meals, videos, onVideoSelect }) => {
         console.log('Thời lượng video:', duration);
     };
 
-    const handleEnded = () => {
-        console.log('Video đã kết thúc');
+    // PUT DONE EXERCISE
+    const [isRequestSent, setIsRequestSent] = useState(false);
+
+    const handleEnded = async () => {
+        if (!isRequestSent) {
+            try {
+                const sendRequestDone = await collectionService.putDoneExercise(dayId, exercise.exerciseId);
+                setIsRequestSent(true);
+
+                console.log('sendRequestDone', sendRequestDone);
+                console.log('Video đã kết thúc và request PUT đã được gửi.');
+            } catch (error) {
+                console.error('Lỗi khi gửi request PUT', error);
+            }
+        }
     };
+
+    useEffect(() => {
+        setIsRequestSent(false);
+    }, [exercise.videoUrl]);
 
     // GET USER INFO
     const { user } = useAuth();
@@ -48,7 +66,6 @@ const VideoPlayer = ({ exercise, meals, videos, onVideoSelect }) => {
     }, [user])
 
     // GET COMMENT
-    const { courseId, dayId } = useParams();
     const [listComment, setListComment] = useState([]);
     const [commentText, setCommentText] = useState([]);
     const [rating, setRating] = useState(1);
@@ -78,11 +95,12 @@ const VideoPlayer = ({ exercise, meals, videos, onVideoSelect }) => {
         <div className={styles.container}>
             {exercise && exercise.videoUrl && (
                 <ReactPlayer
+                    key={exercise.videoUrl}
                     width="100%"
                     height="auto"
                     className={styles.video}
                     url={exercise.videoUrl}
-                    playing={true}
+                    playing={false}
                     controls={true}
                     loop={false}
                     onDuration={handleDuration}

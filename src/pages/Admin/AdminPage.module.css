@@ -1,0 +1,62 @@
+.container {
+    padding-top: 7.5rem;
+}
+
+.kyoRoundLogo1 {
+    height: 80px;
+    margin-bottom: 3rem;
+}
+
+.sidebar {
+    width: 14% !important;
+    margin-left: 19px;
+    padding-top: 20px;
+    border-right: 1px #e4e8eb solid;
+}
+
+.sidebar_icon {
+    margin-right: 25px;
+    color: #bec4ca !important;
+    font-size: 19px;
+}
+
+.sidebar_text {
+    color: #bec4ca !important;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 6px 14px;
+}
+
+.active_sidebar_text {
+    color: #4d83ec !important;
+    background-color: #e9eff9 !important;
+}
+
+.active_sidebar_text .sidebar_icon {
+    color: #4d83ec !important;
+}
+
+.flex_wrap {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.tab_title {
+    margin-bottom: 50px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.btn_add {
+    position: absolute !important;
+    top: 7.5rem;
+    right: 240px;
+    background: #232b35 !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    padding: 7px 15px !important;
+}

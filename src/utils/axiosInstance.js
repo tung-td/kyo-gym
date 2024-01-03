@@ -24,6 +24,16 @@ export const post = async (url, data, options = {}) => {
     }
 };
 
+export const put = async (url, data, options = {}) => {
+    try {
+        const response = await axiosInstance.put(url, data, options);
+        return response.data;
+    } catch (err) {
+        console.error(err);
+        throw err;
+    }
+};
+
 export const patch = async (url, data, options = {}) => {
     try {
         const response = await axiosInstance.patch(url, data, options);

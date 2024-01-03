@@ -69,4 +69,13 @@ export const postRecommend = async (data) => {
     }
 }
 
+export const putDoneExercise = async (day, exercise) => {
+    try {
+        const res = await request.put(`/exercise-day/updateStatusForDay/day/${day}/exercise/${exercise}?status=true`);
+        return res;
+    } catch (error) {
+        console.log('Error fetching recommend course', error);
+    }
+}
+
 export * as collectionService from './collectionService';

@@ -29,7 +29,11 @@ const Login = () => {
                 const token = response.data.token;
                 localStorage.setItem('token', token);
                 setUser(token);
-                navigate('/');
+                if (response.data.roles == 'ROLE_ADMIN') {
+                    navigate('/admin')
+                } else {
+                    navigate('/')
+                }
             } else {
                 setUsernameError('Username không hợp lệ')
                 setPasswordError('Password không hợp lệ')
@@ -52,7 +56,6 @@ const Login = () => {
 
     const handleGoogleLoginSuccess = async (response) => {
         try {
-            // Send the Google OAuth token to your server
             const googleToken = response.credential;
             const googleResponse = await axios.post('http://localhost:8080/api/v1/public/oauth/google', {
                 token: googleToken,
