@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as starFull } from '@fortawesome/free-solid-svg-icons';
 import { faStar as starNon } from '@fortawesome/free-regular-svg-icons';
 
-const Comments = ({ commentText, setCommentText, listComment, setListComment, rating, setRating, courseId, dayId, userData, exercise }) => {
+const Comments = ({ commentText, setCommentText, listComment, setListComment, rating, setRating, courseId, dayId, userData, exercise, setLengthComment }) => {
 
     const handleCommentSubmit = async (e) => {
         e.preventDefault();
@@ -26,6 +26,7 @@ const Comments = ({ commentText, setCommentText, listComment, setListComment, ra
             setListComment(updatedComments);
             setCommentText('');
             setRating(1);
+            setLengthComment(updatedComments?.length || 0);
         } catch (error) {
             console.log(error);
         }
@@ -33,12 +34,10 @@ const Comments = ({ commentText, setCommentText, listComment, setListComment, ra
 
     const [hoveredRating, setHoveredRating] = useState(0);
 
-    // Function to handle hover on stars
     const handleStarHover = (rating) => {
         setHoveredRating(rating);
     };
 
-    // Function to handle click on stars
     const handleStarClick = (rating) => {
         setRating(rating);
 

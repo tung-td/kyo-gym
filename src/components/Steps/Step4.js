@@ -70,7 +70,7 @@ const Step4 = ({ formData, handleChange, handleNext, handlePrevious }) => {
                     </div>
                 </div>
                 <div className={styles.line}></div>
-                <h4>Let's start, Choose the body you want</h4>
+                <h4>Finally, Choose your exercise frequency</h4>
                 <div className={styles.gridCard}>
                     {activityLevels.map((level) => (
                         <Card sx={{ display: 'flex', width: '100%', margin: '10px' }} onClick={() => handleCardClick(level.value)}>

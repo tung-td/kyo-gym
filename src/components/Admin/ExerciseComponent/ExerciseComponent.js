@@ -69,6 +69,8 @@ const ExerciseComponent = () => {
               <TableCell>Description</TableCell>
               <TableCell>Instructions</TableCell>
               <TableCell>Target</TableCell>
+              <TableCell>Body part</TableCell>
+              <TableCell>Equipment</TableCell>
               <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
@@ -84,6 +86,8 @@ const ExerciseComponent = () => {
                 <TableCell className={styles.descriptionCell}>{record.exerciseDescription}</TableCell>
                 <TableCell className={styles.instructionsCell} >{record.instructions}</TableCell>
                 <TableCell>{record.target}</TableCell>
+                <TableCell>{record.bodyPart}</TableCell>
+                <TableCell>{record.equipment}</TableCell>
                 <TableCell>
                   <IconButton
                     color='primary'

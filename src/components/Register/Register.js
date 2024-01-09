@@ -180,7 +180,7 @@ const Register = () => {
             };
 
             const response = await axios.post('http://localhost:8080/api/v1/public/signup', userData);
-            console.log('userData', userData);
+
             if (response.status === 200) {
                 // navigate('/login');
             } else {

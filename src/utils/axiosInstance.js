@@ -73,8 +73,8 @@ axiosInstance.interceptors.response.use(
                 !window.location.href.includes('login') &&
                 !window.location.href.includes('register')
             ) {
-                localStorage.removeItem('token');
-                window.location.href = '/login';
+                // localStorage.removeItem('token');
+                // window.location.href = '/login';
             }
             return;
         }
@@ -87,8 +87,8 @@ axiosInstance.interceptors.response.use(
                 !window.location.href.includes('login') &&
                 !window.location.href.includes('register')
             ) {
-                localStorage.removeItem('token');
-                window.location.href = '/login';
+                // localStorage.removeItem('token');
+                // window.location.href = '/login';
             }
             return;
         }

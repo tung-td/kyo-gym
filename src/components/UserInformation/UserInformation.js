@@ -12,16 +12,33 @@ import ChartLine from '../ChartLine/ChartLine';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+import { useNavigate } from 'react-router-dom';
+
 
 const UserInformation = () => {
     const { user } = useAuth();
     const [userData, setUserData] = useState([]);
+
+    const [recommendedCourse, setRecommendedCourse] = useState('')
+    const [lengthCourse, setLengthCourse] = useState(0)
+
+    const theme = useTheme();
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         const fetchUserData = async () => {
             try {
                 const res = await request.get('/customer/detail')
                 setUserData(res)
+                setRecommendedCourse(res.recommendedCourses.find(course => course.recommendedStatus === true))
+                setLengthCourse(res.recommendedCourses.length)
             } catch (error) {
                 console.log("Error fetching user information", error);
             }
@@ -99,10 +116,10 @@ const UserInformation = () => {
                                         <CardActionArea>
                                             <CardContent>
                                                 <Typography gutterBottom variant="h5" component="div" className={styles.card_tracking_title}>
-                                                    Project Worked
+                                                    Course In Progress
                                                 </Typography>
                                                 <div variant="body2" className={styles.card_tracking_data_icon}>
-                                                    <p className={styles.card_tracking_data}>2</p>
+                                                    <p className={styles.card_tracking_data}>{lengthCourse}</p>
                                                     <div className={styles.card_tracking_icon_bg}><FontAwesomeIcon icon={faFolder} className={styles.card_tracking_icon} /></div>
                                                 </div>
                                             </CardContent>
@@ -114,10 +131,10 @@ const UserInformation = () => {
                                         <CardActionArea>
                                             <CardContent>
                                                 <Typography gutterBottom variant="h5" component="div" className={styles.card_tracking_title}>
-                                                    Lizard
+                                                    BMI
                                                 </Typography>
                                                 <div variant="body2" className={styles.card_tracking_data_icon}>
-                                                    <p className={styles.card_tracking_data}>200 Cal</p>
+                                                    <p className={styles.card_tracking_data}>{recommendedCourse?.bmi || 0}</p>
                                                     <div className={styles.card_tracking_icon_bg}><FontAwesomeIcon icon={faDumbbell} className={styles.card_tracking_icon} /></div>
                                                 </div>
                                             </CardContent>
@@ -202,7 +219,42 @@ const UserInformation = () => {
                         </Container>
                     </Grid>
                     <Grid item xs={6}>
+                        <Card sx={{ display: 'flex' }} className={styles.grid_container}>
+                            {recommendedCourse && (
+                                <>
+                                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                                        <CardContent sx={{ flex: '1 0 auto' }}>
+                                            <Typography component="div" variant="h5">
+                                                {recommendedCourse.courseName}
+                                            </Typography>
+                                            <Typography variant="subtitle1" color="text.secondary" component="div">
+                                                {recommendedCourse.courseTypeName}
+                                            </Typography>
+                                        </CardContent>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+                                            <IconButton aria-label="previous">
+                                                {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                                            </IconButton>
+                                            <IconButton aria-label="play/pause" onClick={() => navigate(`/collections/${recommendedCourse.courseId}/days/1`)}>
+                                                <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+                                            </IconButton>
+                                            <IconButton aria-label="next">
+                                                {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                                            </IconButton>
+                                        </Box>
+                                    </Box>
+                                    <CardMedia
+                                        component="img"
+                                        sx={{ width: 392 }}
+                                        image={recommendedCourse.image}
+                                        alt="Live from space album cover"
+                                    />
+                                </>
+                            )}
+                        </Card>
+                        <Container component="main" maxWidth="100%" className={styles.grid_container}>
 
+                        </Container>
                     </Grid>
                     <Grid item xs={6}>
 

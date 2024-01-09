@@ -1,14 +1,14 @@
 import { request } from '../utils/axiosInstance';
 // GET FULL COURSE
 export const getCards = async () => {
-    const res = await request.get('/course');
+    const res = await request.get('/course-day/courses-with-days');
     return res;
 };
 
 // GET DETAIL OF A COURSE -> JUST GET DAYS IN COMPONENT
 export const getDays = async (days) => {
     try {
-        const res = await request.get(`/course/${days}`);
+        const res = await request.get(`/course-day/courses/${days}`);
         return res;
     } catch (error) {
         console.error('Error fetching days:', error);
@@ -72,6 +72,15 @@ export const postRecommend = async (data) => {
 export const putDoneExercise = async (day, exercise) => {
     try {
         const res = await request.put(`/exercise-day/updateStatusForDay/day/${day}/exercise/${exercise}?status=true`);
+        return res;
+    } catch (error) {
+        console.log('Error fetching recommend course', error);
+    }
+}
+
+export const putReviewCourse = async (courseId, data) => {
+    try {
+        const res = await request.put(`/track-data-ai/update-effectiveness/${courseId}`, data);
         return res;
     } catch (error) {
         console.log('Error fetching recommend course', error);

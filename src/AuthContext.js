@@ -18,11 +18,9 @@ export const AuthProvider = ({ children }) => {
         const user = localStorage.getItem('token');
         setUser(user);
 
-        if (!user && location.pathname === '/register') {
-            navigate('/register');
-        }
+        const loginRequiredPaths = ['/user', '/collections/1/days/1', '/admin'];
 
-        if (!user && location.pathname !== '/register' && location.pathname !== '/') {
+        if (!user && loginRequiredPaths.includes(location.pathname)) {
             navigate('/login');
         }
     }, [navigate, user, location.pathname]);

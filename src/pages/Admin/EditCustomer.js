@@ -41,7 +41,6 @@ const EditCustomer = () => {
           phone,
           email,
         });
-        console.log('Exercise edited successfully', res.data);
         // navigate('/admin');
       }
     } catch (error) {

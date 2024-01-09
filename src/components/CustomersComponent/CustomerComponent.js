@@ -1,31 +1,30 @@
 import React from 'react';
 import { request } from '../../utils/axiosInstance';
 import { useAuth } from '../../AuthContext'
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 // import { faHourglass1 } from '@fortawesome/free-solid-svg-icons';
 const CustomerComponent = () => {
-  const { user } = useAuth();
-const [userData, setUserData] = useState([]);
-useEffect(() => {
-    const fetchUserData = async () => {
-        try {
-            const res = await request.get('/customer/list')
-            setUserData(res)
-            
-        } catch (error) {
-            console.log("Error fetching user information", error);
+    const { user } = useAuth();
+    const [userData, setUserData] = useState([]);
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const res = await request.get('/customer/list')
+                setUserData(res)
+
+            } catch (error) {
+                console.log("Error fetching user information", error);
+            }
         }
-    }
 
-    if (user) {
-        fetchUserData();
-    }
-    
-}, [user])
+        if (user) {
+            fetchUserData();
+        }
 
-console.log(userData)
-  return (
-    <h1>sdfsdfsds</h1>)
+    }, [user])
+
+    return (
+        <h1>sdfsdfsds</h1>)
     // <div>
     //   <Table responsive striped bordered hover>
     //     <thead>
@@ -42,7 +41,7 @@ console.log(userData)
     //     </tbody>
     //   </Table>
     // </div>
-    
+
     // <div>
     //   <h1>Customer Component</h1>
     //   {data && data.length > 0 ? (
@@ -55,7 +54,7 @@ console.log(userData)
     //     <p>Không có dữ liệu</p>
     //   )}
     // </div>
-  
+
 };
 
 export default CustomerComponent;

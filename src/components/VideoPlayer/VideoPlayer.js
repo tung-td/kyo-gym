@@ -34,9 +34,6 @@ const VideoPlayer = ({ exercise, meals, videos, onVideoSelect }) => {
             try {
                 const sendRequestDone = await collectionService.putDoneExercise(dayId, exercise.exerciseId);
                 setIsRequestSent(true);
-
-                console.log('sendRequestDone', sendRequestDone);
-                console.log('Video đã kết thúc và request PUT đã được gửi.');
             } catch (error) {
                 console.error('Lỗi khi gửi request PUT', error);
             }
@@ -83,11 +80,14 @@ const VideoPlayer = ({ exercise, meals, videos, onVideoSelect }) => {
                     : [];
 
                 setListComment(filteredComment);
-                setLengthComment(filteredComment?.length);
+
+                // Update lengthComment separately when listComment changes
+                setLengthComment(filteredComment?.length || 0);
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
+
         getCommentOfExercise();
     }, [courseId, dayId, exercise.exerciseId]);
 
@@ -157,11 +157,11 @@ const VideoPlayer = ({ exercise, meals, videos, onVideoSelect }) => {
                                 <Comments commentText={commentText} setCommentText={setCommentText}
                                     listComment={listComment} setListComment={setListComment}
                                     rating={rating} setRating={setRating}
-                                    setLengthComment={setLengthComment}
                                     courseId={courseId}
                                     dayId={dayId}
                                     userData={userData}
                                     exercise={exercise}
+                                    setLengthComment={setLengthComment}
                                 />
                             )}
 

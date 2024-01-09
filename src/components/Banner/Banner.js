@@ -31,7 +31,7 @@ const Banner = () => {
                 </div>
 
                 <Link to="/recommend" style={{ textDecoration: 'none', color: '#fff' }} className={styles.bn_left_btn}>
-                    Start now
+                    Recommend
                 </Link>
             </div>
             <div className={styles.bn_center}>

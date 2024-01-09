@@ -1,28 +1,38 @@
-import { Button, Form, Input } from 'antd';
 import React, { useState } from 'react';
+import { Button, TextField, Typography, Container, Grid } from '@mui/material';
 import { useAuth } from '../../AuthContext';
 import { request } from '../../utils/axiosInstance';
+import { useNavigate } from 'react-router-dom';
 
 const NewExercise = () => {
   const { user } = useAuth();
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
+  const navigate = useNavigate();
+
   const [bodyPart, setBodyPart] = useState('');
   const [equipment, setEquipment] = useState('');
-  const [instruction, setInstruction] = useState('');
+  const [exerciseDescription, setExerciseDescription] = useState('');
+  const [exerciseName, setExerciseName] = useState('');
+  const [instructions, setInstructions] = useState('');
+  const [target, setTarget] = useState('');
+  const [videoUrl, setVideoUrl] = useState('');
 
-  const onFinish = async () => {
+  const onFinish = async (e) => {
+    e.preventDefault();
     try {
       if (user) {
         const res = await request.post('/exercise/create', {
-          name,
-          description,
           bodyPart,
           equipment,
-          instruction,
+          exerciseDescription,
+          exerciseName,
+          instructions,
+          target,
+          videoUrl,
         });
-        console.log('Exercise created successfully', res.data);
-        // navigate('/admin');
+
+        if (res.message == 'New exercise successfully created!') {
+          navigate('/admin');
+        }
       }
     } catch (error) {
       console.log('Error creating exercise', error);
@@ -30,71 +40,81 @@ const NewExercise = () => {
   };
 
   return (
-    <div className='pt-10 px-44 '>
-      <h1>Create new Exercise</h1>
-      <Form
-        onFinish={onFinish}
-        className='pt-6 max-w-2xl bg-gray-300'
-        labelCol={{
-          span: 5,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
-        layout='horizontal'
-      >
-        <Form.Item label='Name'>
-          <Input.TextArea
-            autoSize
-            placeholder='Enter Exercise name'
-            value={name}
-            required
-            onChange={(e) => setName(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item label='Description'>
-          <Input.TextArea
-            autoSize
-            placeholder='Enter Exercise name'
-            value={description}
-            required
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item label='Body Part'>
-          <Input.TextArea
-            autoSize
-            placeholder='Enter Exercise name'
-            value={bodyPart}
-            required
-            onChange={(e) => setBodyPart(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item label='Equipment'>
-          <Input.TextArea
-            autoSize
-            placeholder='Enter Exercise name'
-            value={equipment}
-            required
-            onChange={(e) => setEquipment(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item label='Instruction'>
-          <Input.TextArea
-            autoSize
-            placeholder='Enter Exercise name'
-            value={instruction}
-            required
-            onChange={(e) => setInstruction(e.target.value)}
-          />
-        </Form.Item>
-        <Form.Item className='pl-[320px]'>
-          <Button type='primary' htmlType=''>
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
-    </div>
+    <Container component="main" maxWidth="md">
+      <Typography variant="h4" align="center">
+        Create new Exercise
+      </Typography>
+      <form onSubmit={onFinish}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Body Part"
+              variant="outlined"
+              value={bodyPart}
+              onChange={(e) => setBodyPart(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Equipment"
+              variant="outlined"
+              value={equipment}
+              onChange={(e) => setEquipment(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Exercise Description"
+              variant="outlined"
+              value={exerciseDescription}
+              onChange={(e) => setExerciseDescription(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Exercise Name"
+              variant="outlined"
+              value={exerciseName}
+              onChange={(e) => setExerciseName(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Instructions"
+              variant="outlined"
+              value={instructions}
+              onChange={(e) => setInstructions(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Target"
+              variant="outlined"
+              value={target}
+              onChange={(e) => setTarget(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Video URL"
+              variant="outlined"
+              value={videoUrl}
+              onChange={(e) => setVideoUrl(e.target.value)}
+            />
+          </Grid>
+        </Grid>
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Submit
+        </Button>
+      </form>
+    </Container>
   );
 };
 

@@ -1,0 +1,16 @@
+.container {
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.formItem {
+    margin-bottom: 16px;
+}
+
+.submitButton {
+    margin-top: 16px;
+}
