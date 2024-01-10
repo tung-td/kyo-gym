@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Kyo Gym Wellness Navigator - ReactJS Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+Kyo Gym Wellness Navigator is a ReactJS web application designed to provide personalized workout recommendations using a Decision Tree algorithm. Users can fill out a form to receive tailored workout plans. The application also includes user authentication (login and logout), an admin page for exercise and user management, and an evaluation system for course effectiveness.
 
-## Available Scripts
+## Key Features
+- **Personalized Workout Recommendations:**
+  - Users can fill out a form to receive personalized workout recommendations using the Decision Tree algorithm.
+- **Authentication:**
+  - Log in and log out functionality for user accounts.
+- **Admin Page:**
+  - Separate admin page for exercise and user management.
+- **Course Evaluation:**
+  - Users will be evaluated at the end of the course to determine its effectiveness. The effectiveness rating will be incorporated into the algorithm for future recommendations.
+- **Daily Tracking:**
+  - Users must complete their daily workout to unlock the next day's plan.
+- **Exercise Comments:**
+  - Users can provide comments and feedback on exercises within a course.
 
-In the project directory, you can run:
+## Usage Guide
+1. **Setup Environment:**
+   - Ensure you have installed [Node.js](https://nodejs.org/) before getting started.
+   - Use `npm install` to install the project dependencies.
 
-### `npm start`
+2. **Run the Application:**
+   - Use `npm start` to start the application on [http://localhost:8080](http://localhost:8080).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Build the Application:**
+   - Use `npm run build` to create a packaged version for deployment.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contributions and Feedback
+- Contributions and feedback are highly appreciated. If you encounter issues or have suggestions, please create a [new issue](https://github.com/tung-td/kyo-gym-wellness-navigator/issues).
 
-### `npm test`
+## License
+This project is distributed under the [MIT License](LICENSE).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for your interest and contribution to the Kyo Gym Wellness Navigator project! Wishing you a great experience with this application.
